@@ -1,0 +1,40 @@
+version: '3'
+
+services:
+
+  web:
+    build:
+      dockerfile: docker/Dockerfile
+      context: .
+      args:
+        XDEBUG_ENABLED: "1"
+    ports:
+      - 8080:80
+    expose:
+      - 9003
+    volumes:
+      - '.:/usr/src/app:delegated'
+    environment: &WEB_SERVICE_ENV
+      - DB_HOST=${DB_HOST}
+      - DB_DATABASE=${DB_DATABASE}
+      - DB_USERNAME=${DB_USERNAME}
+      - DB_PASSWORD=${DB_PASSWORD}
+      - DB_CONNECTION=${DB_CONNECTION}
+      - PHP_IDE_CONFIG=serverName=${COMPOSE_PROJECT_NAME}
+      - APP_ENV
+      - OPCACHE_VALIDATE_TIMESTAMPS=1
+      - PM_MAX_CHILDREN=25
+      - PM_START_SERVERS=10
+      - PM_MIN_SPARE_SERVERS=10
+      - PM_MAX_SPARE_SERVERS=12
+      - PM_MAX_REQUESTS=500
+
+  db:
+    image: postgres:11
+    ports:
+      - '5432:5432'
+    environment:
+      - POSTGRES_DB=${DB_DATABASE}
+      - POSTGRES_USER=${DB_USERNAME}
+      - POSTGRES_ROOT_PASSWORD=${DB_ROOT_PASSWORD}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
