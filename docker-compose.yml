@@ -14,7 +14,7 @@ services:
       - 9003
     volumes:
       - '.:/usr/src/app:delegated'
-    environment: &WEB_SERVICE_ENV
+    environment:
       - DB_HOST=${DB_HOST}
       - DB_DATABASE=${DB_DATABASE}
       - DB_USERNAME=${DB_USERNAME}
@@ -36,5 +36,5 @@ services:
     environment:
       - POSTGRES_DB=${DB_DATABASE}
       - POSTGRES_USER=${DB_USERNAME}
-      - POSTGRES_ROOT_PASSWORD=${DB_ROOT_PASSWORD}
+      - POSTGRES_ROOT_PASSWORD=${POSTGRES_ROOT_PASSWORD}
       - POSTGRES_PASSWORD=${DB_PASSWORD}
