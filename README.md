@@ -2,7 +2,7 @@
 
 Simple Laravel API to demonstrate architecture
 
-## Used convention, approaches and solutions
+## Used convention, approaches and solutions (not simplest, but nice for bigger projects)
 
 - Routing using UUID pattern as a first UUID format validation
 - UUID as primary Model ID
