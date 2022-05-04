@@ -5,17 +5,24 @@ declare(strict_types=1);
 namespace App\Http\Actions\Company;
 
 use App\Http\Controllers\Controller;
-use App\Models\Employee;
+use App\Models\Company;
 use Illuminate\Contracts\Support\Responsable;
-use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class DeleteCompany extends Controller
 {
-    public function __invoke(FormRequest $request): Responsable
+    /**
+     * Delete a Company
+     *
+     * @group Company
+     *
+     * @param Company $company
+     * @return Responsable
+     */
+    public function __invoke(Company $company): Responsable
     {
-        $employee = Employee::query()->make($request->validated());
+        $company->delete();
 
-        return new JsonResource($employee);
+        return new JsonResource([]);
     }
 }

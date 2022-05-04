@@ -9,18 +9,17 @@ use App\Http\Resources\CompanyResource;
 use App\Models\Company;
 use Illuminate\Contracts\Support\Responsable;
 
-class GetCompany extends Controller
+class GetAllCompanies extends Controller
 {
     /**
-     * Get a Company
+     * Get all Companies
      *
      * @group Company
-     * @responseFile responses/company/company.json
-     * @param Company $company
+     * @responseFile responses/company/companies.json
      * @return Responsable
      */
-    public function __invoke(Company $company): Responsable
+    public function __invoke(): Responsable
     {
-        return new CompanyResource($company->loadMissing('employees'));
+        return CompanyResource::collection(Company::all()->loadMissing('employees'));
     }
 }

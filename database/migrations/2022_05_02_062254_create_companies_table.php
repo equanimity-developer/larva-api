@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('nip', 10)->unique();
             $table->string('address');
             $table->string('city');
-            $table->string('postal_code', 6);
+            $table->string('postcode', 6);
             $table->timestampsTz();
             $table->softDeletesTz();
         });

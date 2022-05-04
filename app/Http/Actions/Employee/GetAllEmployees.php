@@ -9,19 +9,18 @@ use App\Http\Resources\EmployeeResource;
 use App\Models\Employee;
 use Illuminate\Contracts\Support\Responsable;
 
-class GetEmployee extends Controller
+class GetAllEmployees extends Controller
 {
     /**
-     * Get an Employee
+     * Get all Employees
      *
      * @group Employee
-     * @responseFile responses/employee/employee.json
+     * @responseFile responses/employee/employees.json
      *
-     * @param Employee $employee
      * @return Responsable
      */
-    public function __invoke(Employee $employee): Responsable
+    public function __invoke(): Responsable
     {
-        return new EmployeeResource($employee->loadMissing('company'));
+        return EmployeeResource::collection(Employee::all()->loadMissing('company'));
     }
 }

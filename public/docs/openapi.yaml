@@ -1,0 +1,1359 @@
+openapi: 3.0.3
+info:
+    title: larva
+    description: ''
+    version: 1.0.0
+servers:
+    -   url: 'http://localhost:8080'
+paths:
+    '/api/companies/{company}':
+        delete:
+            summary: 'Delete a Company'
+            description: ''
+            parameters:
+                -   in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -   in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses: { }
+            tags:
+                - Company
+            security: [ ]
+        get:
+            summary: 'Get a Company'
+            description: ''
+            parameters:
+                -   in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -   in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    data:
+                                        id: 529cb14d-70e6-40d9-a32e-478a1cc80fce
+                                        name: 'Borkowski sp. k.'
+                                        nip: '9814308576'
+                                        address: 'Legionów 90/66, 71-143 Zielona Góra'
+                                        city: Rumia
+                                        postcode: 06-761
+                                        created_at: '2022-05-04T19:17:33.000000Z'
+                                        updated_at: '2022-05-04T19:17:33.000000Z'
+                                        deleted_at: null
+                                        employees:
+                                            -   id: 6c65c45d-a2dc-432b-b87d-a51d0e1b8cf6
+                                                email: ewa.wilk@example.com
+                                                first_name: Olga
+                                                last_name: Brzezińska
+                                                phone_number: 0048(53)0710616
+                                                created_at: '2022-05-04T19:17:33.000000Z'
+                                                updated_at: '2022-05-04T19:17:33.000000Z'
+                                                deleted_at: null
+                                                company_id: 529cb14d-70e6-40d9-a32e-478a1cc80fce
+                                            -   id: 308446b3-e779-4ad8-b33f-adfc39ad84ee
+                                                email: lwojciechowski@example.net
+                                                first_name: Nela
+                                                last_name: Makowski
+                                                phone_number: '0048 351 031 670'
+                                                created_at: '2022-05-04T19:17:33.000000Z'
+                                                updated_at: '2022-05-04T19:17:33.000000Z'
+                                                deleted_at: null
+                                                company_id: 529cb14d-70e6-40d9-a32e-478a1cc80fce
+                                            -   id: 2c474175-83bd-4c98-ba2b-c15164e19c86
+                                                email: fkowalczyk@example.org
+                                                first_name: Ksawery
+                                                last_name: Zając
+                                                phone_number: '+48 96 886 15 40'
+                                                created_at: '2022-05-04T19:17:33.000000Z'
+                                                updated_at: '2022-05-04T19:17:33.000000Z'
+                                                deleted_at: null
+                                                company_id: 529cb14d-70e6-40d9-a32e-478a1cc80fce
+                                            -   id: 77f09e5a-7639-4db8-be08-b812c4ee0191
+                                                email: aleksander75@example.net
+                                                first_name: Julia
+                                                last_name: Górska
+                                                phone_number: '763 668 997'
+                                                created_at: '2022-05-04T19:17:33.000000Z'
+                                                updated_at: '2022-05-04T19:17:33.000000Z'
+                                                deleted_at: null
+                                                company_id: 529cb14d-70e6-40d9-a32e-478a1cc80fce
+                                            -   id: 349065bd-72a5-49c9-8f92-a41156c82be1
+                                                email: oliwia.wilk@example.com
+                                                first_name: Oliwier
+                                                last_name: Kołodziej
+                                                phone_number: '0048 26 502 48 89'
+                                                created_at: '2022-05-04T19:17:33.000000Z'
+                                                updated_at: '2022-05-04T19:17:33.000000Z'
+                                                deleted_at: null
+                                                company_id: 529cb14d-70e6-40d9-a32e-478a1cc80fce
+                                properties:
+                                    data:
+                                        type: object
+                                        example:
+                                            id: 529cb14d-70e6-40d9-a32e-478a1cc80fce
+                                            name: 'Borkowski sp. k.'
+                                            nip: '9814308576'
+                                            address: 'Legionów 90/66, 71-143 Zielona Góra'
+                                            city: Rumia
+                                            postcode: 06-761
+                                            created_at: '2022-05-04T19:17:33.000000Z'
+                                            updated_at: '2022-05-04T19:17:33.000000Z'
+                                            deleted_at: null
+                                            employees:
+                                                -   id: 6c65c45d-a2dc-432b-b87d-a51d0e1b8cf6
+                                                    email: ewa.wilk@example.com
+                                                    first_name: Olga
+                                                    last_name: Brzezińska
+                                                    phone_number: 0048(53)0710616
+                                                    created_at: '2022-05-04T19:17:33.000000Z'
+                                                    updated_at: '2022-05-04T19:17:33.000000Z'
+                                                    deleted_at: null
+                                                    company_id: 529cb14d-70e6-40d9-a32e-478a1cc80fce
+                                                -   id: 308446b3-e779-4ad8-b33f-adfc39ad84ee
+                                                    email: lwojciechowski@example.net
+                                                    first_name: Nela
+                                                    last_name: Makowski
+                                                    phone_number: '0048 351 031 670'
+                                                    created_at: '2022-05-04T19:17:33.000000Z'
+                                                    updated_at: '2022-05-04T19:17:33.000000Z'
+                                                    deleted_at: null
+                                                    company_id: 529cb14d-70e6-40d9-a32e-478a1cc80fce
+                                                -   id: 2c474175-83bd-4c98-ba2b-c15164e19c86
+                                                    email: fkowalczyk@example.org
+                                                    first_name: Ksawery
+                                                    last_name: Zając
+                                                    phone_number: '+48 96 886 15 40'
+                                                    created_at: '2022-05-04T19:17:33.000000Z'
+                                                    updated_at: '2022-05-04T19:17:33.000000Z'
+                                                    deleted_at: null
+                                                    company_id: 529cb14d-70e6-40d9-a32e-478a1cc80fce
+                                                -   id: 77f09e5a-7639-4db8-be08-b812c4ee0191
+                                                    email: aleksander75@example.net
+                                                    first_name: Julia
+                                                    last_name: Górska
+                                                    phone_number: '763 668 997'
+                                                    created_at: '2022-05-04T19:17:33.000000Z'
+                                                    updated_at: '2022-05-04T19:17:33.000000Z'
+                                                    deleted_at: null
+                                                    company_id: 529cb14d-70e6-40d9-a32e-478a1cc80fce
+                                                -   id: 349065bd-72a5-49c9-8f92-a41156c82be1
+                                                    email: oliwia.wilk@example.com
+                                                    first_name: Oliwier
+                                                    last_name: Kołodziej
+                                                    phone_number: '0048 26 502 48 89'
+                                                    created_at: '2022-05-04T19:17:33.000000Z'
+                                                    updated_at: '2022-05-04T19:17:33.000000Z'
+                                                    deleted_at: null
+                                                    company_id: 529cb14d-70e6-40d9-a32e-478a1cc80fce
+            tags:
+                - Company
+            security: [ ]
+        patch:
+            summary: 'Update a Company'
+            description: ''
+            parameters:
+                -   in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -   in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    data:
+                                        id: 529cb14d-70e6-40d9-a32e-478a1cc80fce
+                                        name: 'Borkowski sp. k.'
+                                        nip: '9814308576'
+                                        address: 'Legionów 90/66, 71-143 Zielona Góra'
+                                        city: Rumia
+                                        postcode: 06-761
+                                        created_at: '2022-05-04T19:17:33.000000Z'
+                                        updated_at: '2022-05-04T19:17:33.000000Z'
+                                        deleted_at: null
+                                        employees:
+                                            -   id: 6c65c45d-a2dc-432b-b87d-a51d0e1b8cf6
+                                                email: ewa.wilk@example.com
+                                                first_name: Olga
+                                                last_name: Brzezińska
+                                                phone_number: 0048(53)0710616
+                                                created_at: '2022-05-04T19:17:33.000000Z'
+                                                updated_at: '2022-05-04T19:17:33.000000Z'
+                                                deleted_at: null
+                                                company_id: 529cb14d-70e6-40d9-a32e-478a1cc80fce
+                                            -   id: 308446b3-e779-4ad8-b33f-adfc39ad84ee
+                                                email: lwojciechowski@example.net
+                                                first_name: Nela
+                                                last_name: Makowski
+                                                phone_number: '0048 351 031 670'
+                                                created_at: '2022-05-04T19:17:33.000000Z'
+                                                updated_at: '2022-05-04T19:17:33.000000Z'
+                                                deleted_at: null
+                                                company_id: 529cb14d-70e6-40d9-a32e-478a1cc80fce
+                                            -   id: 2c474175-83bd-4c98-ba2b-c15164e19c86
+                                                email: fkowalczyk@example.org
+                                                first_name: Ksawery
+                                                last_name: Zając
+                                                phone_number: '+48 96 886 15 40'
+                                                created_at: '2022-05-04T19:17:33.000000Z'
+                                                updated_at: '2022-05-04T19:17:33.000000Z'
+                                                deleted_at: null
+                                                company_id: 529cb14d-70e6-40d9-a32e-478a1cc80fce
+                                            -   id: 77f09e5a-7639-4db8-be08-b812c4ee0191
+                                                email: aleksander75@example.net
+                                                first_name: Julia
+                                                last_name: Górska
+                                                phone_number: '763 668 997'
+                                                created_at: '2022-05-04T19:17:33.000000Z'
+                                                updated_at: '2022-05-04T19:17:33.000000Z'
+                                                deleted_at: null
+                                                company_id: 529cb14d-70e6-40d9-a32e-478a1cc80fce
+                                            -   id: 349065bd-72a5-49c9-8f92-a41156c82be1
+                                                email: oliwia.wilk@example.com
+                                                first_name: Oliwier
+                                                last_name: Kołodziej
+                                                phone_number: '0048 26 502 48 89'
+                                                created_at: '2022-05-04T19:17:33.000000Z'
+                                                updated_at: '2022-05-04T19:17:33.000000Z'
+                                                deleted_at: null
+                                                company_id: 529cb14d-70e6-40d9-a32e-478a1cc80fce
+                                properties:
+                                    data:
+                                        type: object
+                                        example:
+                                            id: 529cb14d-70e6-40d9-a32e-478a1cc80fce
+                                            name: 'Borkowski sp. k.'
+                                            nip: '9814308576'
+                                            address: 'Legionów 90/66, 71-143 Zielona Góra'
+                                            city: Rumia
+                                            postcode: 06-761
+                                            created_at: '2022-05-04T19:17:33.000000Z'
+                                            updated_at: '2022-05-04T19:17:33.000000Z'
+                                            deleted_at: null
+                                            employees:
+                                                -   id: 6c65c45d-a2dc-432b-b87d-a51d0e1b8cf6
+                                                    email: ewa.wilk@example.com
+                                                    first_name: Olga
+                                                    last_name: Brzezińska
+                                                    phone_number: 0048(53)0710616
+                                                    created_at: '2022-05-04T19:17:33.000000Z'
+                                                    updated_at: '2022-05-04T19:17:33.000000Z'
+                                                    deleted_at: null
+                                                    company_id: 529cb14d-70e6-40d9-a32e-478a1cc80fce
+                                                -   id: 308446b3-e779-4ad8-b33f-adfc39ad84ee
+                                                    email: lwojciechowski@example.net
+                                                    first_name: Nela
+                                                    last_name: Makowski
+                                                    phone_number: '0048 351 031 670'
+                                                    created_at: '2022-05-04T19:17:33.000000Z'
+                                                    updated_at: '2022-05-04T19:17:33.000000Z'
+                                                    deleted_at: null
+                                                    company_id: 529cb14d-70e6-40d9-a32e-478a1cc80fce
+                                                -   id: 2c474175-83bd-4c98-ba2b-c15164e19c86
+                                                    email: fkowalczyk@example.org
+                                                    first_name: Ksawery
+                                                    last_name: Zając
+                                                    phone_number: '+48 96 886 15 40'
+                                                    created_at: '2022-05-04T19:17:33.000000Z'
+                                                    updated_at: '2022-05-04T19:17:33.000000Z'
+                                                    deleted_at: null
+                                                    company_id: 529cb14d-70e6-40d9-a32e-478a1cc80fce
+                                                -   id: 77f09e5a-7639-4db8-be08-b812c4ee0191
+                                                    email: aleksander75@example.net
+                                                    first_name: Julia
+                                                    last_name: Górska
+                                                    phone_number: '763 668 997'
+                                                    created_at: '2022-05-04T19:17:33.000000Z'
+                                                    updated_at: '2022-05-04T19:17:33.000000Z'
+                                                    deleted_at: null
+                                                    company_id: 529cb14d-70e6-40d9-a32e-478a1cc80fce
+                                                -   id: 349065bd-72a5-49c9-8f92-a41156c82be1
+                                                    email: oliwia.wilk@example.com
+                                                    first_name: Oliwier
+                                                    last_name: Kołodziej
+                                                    phone_number: '0048 26 502 48 89'
+                                                    created_at: '2022-05-04T19:17:33.000000Z'
+                                                    updated_at: '2022-05-04T19:17:33.000000Z'
+                                                    deleted_at: null
+                                                    company_id: 529cb14d-70e6-40d9-a32e-478a1cc80fce
+            tags:
+                - Company
+            requestBody:
+                required: false
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                name:
+                                    type: string
+                                    description: 'Company name'
+                                    example: 'Firma S.A.'
+                                nip:
+                                    type: string
+                                    description: 'Company NIP'
+                                    example: '7972226391'
+                                address:
+                                    type: string
+                                    description: 'Company address'
+                                    example: 'Gołębia 94, 32-058 Opole'
+                                city:
+                                    type: string
+                                    description: 'Company city'
+                                    example: Opole
+                                postcode:
+                                    type: string
+                                    description: 'Company city postcode'
+                                    example: 32-058
+            security: [ ]
+        parameters:
+            -   in: path
+                name: company
+                description: ''
+                example: 529cb14d-70e6-40d9-a32e-478a1cc80fce
+                required: true
+                schema:
+                    type: string
+    /api/companies:
+        post:
+            summary: 'Create a Company'
+            description: ''
+            parameters:
+                -   in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -   in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                201:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    data:
+                                        id: 529cb14d-70e6-40d9-a32e-478a1cc80fce
+                                        name: 'Borkowski sp. k.'
+                                        nip: '9814308576'
+                                        address: 'Legionów 90/66, 71-143 Zielona Góra'
+                                        city: Rumia
+                                        postcode: 06-761
+                                        created_at: '2022-05-04T19:17:33.000000Z'
+                                        updated_at: '2022-05-04T19:17:33.000000Z'
+                                        deleted_at: null
+                                        employees:
+                                            -   id: 6c65c45d-a2dc-432b-b87d-a51d0e1b8cf6
+                                                email: ewa.wilk@example.com
+                                                first_name: Olga
+                                                last_name: Brzezińska
+                                                phone_number: 0048(53)0710616
+                                                created_at: '2022-05-04T19:17:33.000000Z'
+                                                updated_at: '2022-05-04T19:17:33.000000Z'
+                                                deleted_at: null
+                                                company_id: 529cb14d-70e6-40d9-a32e-478a1cc80fce
+                                            -   id: 308446b3-e779-4ad8-b33f-adfc39ad84ee
+                                                email: lwojciechowski@example.net
+                                                first_name: Nela
+                                                last_name: Makowski
+                                                phone_number: '0048 351 031 670'
+                                                created_at: '2022-05-04T19:17:33.000000Z'
+                                                updated_at: '2022-05-04T19:17:33.000000Z'
+                                                deleted_at: null
+                                                company_id: 529cb14d-70e6-40d9-a32e-478a1cc80fce
+                                            -   id: 2c474175-83bd-4c98-ba2b-c15164e19c86
+                                                email: fkowalczyk@example.org
+                                                first_name: Ksawery
+                                                last_name: Zając
+                                                phone_number: '+48 96 886 15 40'
+                                                created_at: '2022-05-04T19:17:33.000000Z'
+                                                updated_at: '2022-05-04T19:17:33.000000Z'
+                                                deleted_at: null
+                                                company_id: 529cb14d-70e6-40d9-a32e-478a1cc80fce
+                                            -   id: 77f09e5a-7639-4db8-be08-b812c4ee0191
+                                                email: aleksander75@example.net
+                                                first_name: Julia
+                                                last_name: Górska
+                                                phone_number: '763 668 997'
+                                                created_at: '2022-05-04T19:17:33.000000Z'
+                                                updated_at: '2022-05-04T19:17:33.000000Z'
+                                                deleted_at: null
+                                                company_id: 529cb14d-70e6-40d9-a32e-478a1cc80fce
+                                            -   id: 349065bd-72a5-49c9-8f92-a41156c82be1
+                                                email: oliwia.wilk@example.com
+                                                first_name: Oliwier
+                                                last_name: Kołodziej
+                                                phone_number: '0048 26 502 48 89'
+                                                created_at: '2022-05-04T19:17:33.000000Z'
+                                                updated_at: '2022-05-04T19:17:33.000000Z'
+                                                deleted_at: null
+                                                company_id: 529cb14d-70e6-40d9-a32e-478a1cc80fce
+                                properties:
+                                    data:
+                                        type: object
+                                        example:
+                                            id: 529cb14d-70e6-40d9-a32e-478a1cc80fce
+                                            name: 'Borkowski sp. k.'
+                                            nip: '9814308576'
+                                            address: 'Legionów 90/66, 71-143 Zielona Góra'
+                                            city: Rumia
+                                            postcode: 06-761
+                                            created_at: '2022-05-04T19:17:33.000000Z'
+                                            updated_at: '2022-05-04T19:17:33.000000Z'
+                                            deleted_at: null
+                                            employees:
+                                                -   id: 6c65c45d-a2dc-432b-b87d-a51d0e1b8cf6
+                                                    email: ewa.wilk@example.com
+                                                    first_name: Olga
+                                                    last_name: Brzezińska
+                                                    phone_number: 0048(53)0710616
+                                                    created_at: '2022-05-04T19:17:33.000000Z'
+                                                    updated_at: '2022-05-04T19:17:33.000000Z'
+                                                    deleted_at: null
+                                                    company_id: 529cb14d-70e6-40d9-a32e-478a1cc80fce
+                                                -   id: 308446b3-e779-4ad8-b33f-adfc39ad84ee
+                                                    email: lwojciechowski@example.net
+                                                    first_name: Nela
+                                                    last_name: Makowski
+                                                    phone_number: '0048 351 031 670'
+                                                    created_at: '2022-05-04T19:17:33.000000Z'
+                                                    updated_at: '2022-05-04T19:17:33.000000Z'
+                                                    deleted_at: null
+                                                    company_id: 529cb14d-70e6-40d9-a32e-478a1cc80fce
+                                                -   id: 2c474175-83bd-4c98-ba2b-c15164e19c86
+                                                    email: fkowalczyk@example.org
+                                                    first_name: Ksawery
+                                                    last_name: Zając
+                                                    phone_number: '+48 96 886 15 40'
+                                                    created_at: '2022-05-04T19:17:33.000000Z'
+                                                    updated_at: '2022-05-04T19:17:33.000000Z'
+                                                    deleted_at: null
+                                                    company_id: 529cb14d-70e6-40d9-a32e-478a1cc80fce
+                                                -   id: 77f09e5a-7639-4db8-be08-b812c4ee0191
+                                                    email: aleksander75@example.net
+                                                    first_name: Julia
+                                                    last_name: Górska
+                                                    phone_number: '763 668 997'
+                                                    created_at: '2022-05-04T19:17:33.000000Z'
+                                                    updated_at: '2022-05-04T19:17:33.000000Z'
+                                                    deleted_at: null
+                                                    company_id: 529cb14d-70e6-40d9-a32e-478a1cc80fce
+                                                -   id: 349065bd-72a5-49c9-8f92-a41156c82be1
+                                                    email: oliwia.wilk@example.com
+                                                    first_name: Oliwier
+                                                    last_name: Kołodziej
+                                                    phone_number: '0048 26 502 48 89'
+                                                    created_at: '2022-05-04T19:17:33.000000Z'
+                                                    updated_at: '2022-05-04T19:17:33.000000Z'
+                                                    deleted_at: null
+                                                    company_id: 529cb14d-70e6-40d9-a32e-478a1cc80fce
+            tags:
+                - Company
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                name:
+                                    type: string
+                                    description: 'Company name'
+                                    example: 'Firma S.A.'
+                                nip:
+                                    type: string
+                                    description: 'Company NIP'
+                                    example: '7972226391'
+                                address:
+                                    type: string
+                                    description: 'Company address'
+                                    example: 'Gołębia 94, 32-058 Opole'
+                                city:
+                                    type: string
+                                    description: 'Company city'
+                                    example: Opole
+                                postcode:
+                                    type: string
+                                    description: 'Company city postcode'
+                                    example: 32-058
+                            required:
+                                - name
+                                - nip
+                                - address
+                                - city
+                                - postcode
+            security: [ ]
+        get:
+            summary: 'Get all Companies'
+            description: ''
+            parameters:
+                -   in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -   in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    data:
+                                        -   id: 529cb14d-70e6-40d9-a32e-478a1cc80fce
+                                            name: 'Borkowski sp. k.'
+                                            nip: '9814308576'
+                                            address: 'Legionów 90/66, 71-143 Zielona Góra'
+                                            city: Rumia
+                                            postcode: 06-761
+                                            created_at: '2022-05-04T19:17:33.000000Z'
+                                            updated_at: '2022-05-04T19:17:33.000000Z'
+                                            deleted_at: null
+                                            employees:
+                                                -   id: 6c65c45d-a2dc-432b-b87d-a51d0e1b8cf6
+                                                    email: ewa.wilk@example.com
+                                                    first_name: Olga
+                                                    last_name: Brzezińska
+                                                    phone_number: 0048(53)0710616
+                                                    created_at: '2022-05-04T19:17:33.000000Z'
+                                                    updated_at: '2022-05-04T19:17:33.000000Z'
+                                                    deleted_at: null
+                                                    company_id: 529cb14d-70e6-40d9-a32e-478a1cc80fce
+                                                -   id: 308446b3-e779-4ad8-b33f-adfc39ad84ee
+                                                    email: lwojciechowski@example.net
+                                                    first_name: Nela
+                                                    last_name: Makowski
+                                                    phone_number: '0048 351 031 670'
+                                                    created_at: '2022-05-04T19:17:33.000000Z'
+                                                    updated_at: '2022-05-04T19:17:33.000000Z'
+                                                    deleted_at: null
+                                                    company_id: 529cb14d-70e6-40d9-a32e-478a1cc80fce
+                                                -   id: 2c474175-83bd-4c98-ba2b-c15164e19c86
+                                                    email: fkowalczyk@example.org
+                                                    first_name: Ksawery
+                                                    last_name: Zając
+                                                    phone_number: '+48 96 886 15 40'
+                                                    created_at: '2022-05-04T19:17:33.000000Z'
+                                                    updated_at: '2022-05-04T19:17:33.000000Z'
+                                                    deleted_at: null
+                                                    company_id: 529cb14d-70e6-40d9-a32e-478a1cc80fce
+                                                -   id: 77f09e5a-7639-4db8-be08-b812c4ee0191
+                                                    email: aleksander75@example.net
+                                                    first_name: Julia
+                                                    last_name: Górska
+                                                    phone_number: '763 668 997'
+                                                    created_at: '2022-05-04T19:17:33.000000Z'
+                                                    updated_at: '2022-05-04T19:17:33.000000Z'
+                                                    deleted_at: null
+                                                    company_id: 529cb14d-70e6-40d9-a32e-478a1cc80fce
+                                                -   id: 349065bd-72a5-49c9-8f92-a41156c82be1
+                                                    email: oliwia.wilk@example.com
+                                                    first_name: Oliwier
+                                                    last_name: Kołodziej
+                                                    phone_number: '0048 26 502 48 89'
+                                                    created_at: '2022-05-04T19:17:33.000000Z'
+                                                    updated_at: '2022-05-04T19:17:33.000000Z'
+                                                    deleted_at: null
+                                                    company_id: 529cb14d-70e6-40d9-a32e-478a1cc80fce
+                                                -   id: e31ecb36-acb2-4456-bb58-c19906966498
+                                                    email: jan.kowalski@example.com
+                                                    first_name: Jan
+                                                    last_name: Kowalski
+                                                    phone_number: '+48791000000'
+                                                    created_at: '2022-05-04T19:19:15.000000Z'
+                                                    updated_at: '2022-05-04T19:19:15.000000Z'
+                                                    deleted_at: null
+                                                    company_id: 529cb14d-70e6-40d9-a32e-478a1cc80fce
+                                        -   id: 6a3d5db9-1180-4795-a246-0ad29405e747
+                                            name: 'Szczepański sp. j.'
+                                            nip: '1984834526'
+                                            address: 'Ściegiennego Piotra 98/93, 57-943 Bolesławiec'
+                                            city: Jaworzno
+                                            postcode: 69-884
+                                            created_at: '2022-05-04T19:17:33.000000Z'
+                                            updated_at: '2022-05-04T19:17:33.000000Z'
+                                            deleted_at: null
+                                            employees:
+                                                -   id: 815433f4-3784-4c6d-9cbd-ec1ec1417547
+                                                    email: sadowski.gustaw@example.net
+                                                    first_name: Stanisław
+                                                    last_name: Adamska
+                                                    phone_number: '+48 56 192 25 28'
+                                                    created_at: '2022-05-04T19:17:33.000000Z'
+                                                    updated_at: '2022-05-04T19:17:33.000000Z'
+                                                    deleted_at: null
+                                                    company_id: 6a3d5db9-1180-4795-a246-0ad29405e747
+                                                -   id: 60a46644-aee0-402b-acc8-d082743bdfe2
+                                                    email: zalewska.katarzyna@example.com
+                                                    first_name: Patryk
+                                                    last_name: Kamiński
+                                                    phone_number: '0048 011 659 073'
+                                                    created_at: '2022-05-04T19:17:33.000000Z'
+                                                    updated_at: '2022-05-04T19:17:33.000000Z'
+                                                    deleted_at: null
+                                                    company_id: 6a3d5db9-1180-4795-a246-0ad29405e747
+                                                -   id: aacddc0a-e914-49a1-9e69-ec9ab88df123
+                                                    email: nadia.piotrowska@example.org
+                                                    first_name: Błażej
+                                                    last_name: Laskowski
+                                                    phone_number: '256418804'
+                                                    created_at: '2022-05-04T19:17:33.000000Z'
+                                                    updated_at: '2022-05-04T19:17:33.000000Z'
+                                                    deleted_at: null
+                                                    company_id: 6a3d5db9-1180-4795-a246-0ad29405e747
+                                                -   id: 25a9f404-301e-40bc-a581-84621e1ade26
+                                                    email: wilk.kamil@example.org
+                                                    first_name: Pola
+                                                    last_name: Pawlak
+                                                    phone_number: 0048(52)5873641
+                                                    created_at: '2022-05-04T19:17:33.000000Z'
+                                                    updated_at: '2022-05-04T19:17:33.000000Z'
+                                                    deleted_at: null
+                                                    company_id: 6a3d5db9-1180-4795-a246-0ad29405e747
+                                                -   id: f91a1995-f6eb-42bf-a167-e9ef176209d6
+                                                    email: rkowalczyk@example.net
+                                                    first_name: Dominika
+                                                    last_name: Brzezińska
+                                                    phone_number: 0048(83)9519872
+                                                    created_at: '2022-05-04T19:17:33.000000Z'
+                                                    updated_at: '2022-05-04T19:17:33.000000Z'
+                                                    deleted_at: null
+                                                    company_id: 6a3d5db9-1180-4795-a246-0ad29405e747
+                                        -   id: 1bfedd4c-e86e-42c1-8e06-58d30651ac14
+                                            name: Bąk
+                                            nip: '4575081284'
+                                            address: 'Żurawia 87/91, 21-999 Starachowice'
+                                            city: Police
+                                            postcode: 31-697
+                                            created_at: '2022-05-04T19:17:33.000000Z'
+                                            updated_at: '2022-05-04T19:17:33.000000Z'
+                                            deleted_at: null
+                                            employees:
+                                                -   id: b0592150-bf06-45b9-ad1b-7686b1ab7774
+                                                    email: dominika.wisniewska@example.org
+                                                    first_name: Jacek
+                                                    last_name: Błaszczyk
+                                                    phone_number: '767373957'
+                                                    created_at: '2022-05-04T19:17:33.000000Z'
+                                                    updated_at: '2022-05-04T19:17:33.000000Z'
+                                                    deleted_at: null
+                                                    company_id: 1bfedd4c-e86e-42c1-8e06-58d30651ac14
+                                                -   id: ae9069e0-fbe2-446c-971e-523a3c47ecb8
+                                                    email: maria57@example.net
+                                                    first_name: Nataniel
+                                                    last_name: Baranowska
+                                                    phone_number: '0048 381 309 300'
+                                                    created_at: '2022-05-04T19:17:33.000000Z'
+                                                    updated_at: '2022-05-04T19:17:33.000000Z'
+                                                    deleted_at: null
+                                                    company_id: 1bfedd4c-e86e-42c1-8e06-58d30651ac14
+                                                -   id: f6c83f1e-ecd3-47e9-aa75-dd4788846c91
+                                                    email: fstepien@example.org
+                                                    first_name: Damian
+                                                    last_name: Michalski
+                                                    phone_number: '0048 01 680 52 02'
+                                                    created_at: '2022-05-04T19:17:33.000000Z'
+                                                    updated_at: '2022-05-04T19:17:33.000000Z'
+                                                    deleted_at: null
+                                                    company_id: 1bfedd4c-e86e-42c1-8e06-58d30651ac14
+                                                -   id: a204125b-b0e8-4752-90f2-19267b327963
+                                                    email: pawlak.jeremi@example.com
+                                                    first_name: Klara
+                                                    last_name: Kalinowska
+                                                    phone_number: '0048 06 027 83 77'
+                                                    created_at: '2022-05-04T19:17:33.000000Z'
+                                                    updated_at: '2022-05-04T19:17:33.000000Z'
+                                                    deleted_at: null
+                                                    company_id: 1bfedd4c-e86e-42c1-8e06-58d30651ac14
+                                                -   id: 59f927c9-5c68-4462-b333-fd1bbbe5034e
+                                                    email: jaworski.laura@example.net
+                                                    first_name: Dagmara
+                                                    last_name: Król
+                                                    phone_number: '+48 61 207 41 44'
+                                                    created_at: '2022-05-04T19:17:33.000000Z'
+                                                    updated_at: '2022-05-04T19:17:33.000000Z'
+                                                    deleted_at: null
+                                                    company_id: 1bfedd4c-e86e-42c1-8e06-58d30651ac14
+                                properties:
+                                    data:
+                                        type: array
+                                        example:
+                                            -   id: 529cb14d-70e6-40d9-a32e-478a1cc80fce
+                                                name: 'Borkowski sp. k.'
+                                                nip: '9814308576'
+                                                address: 'Legionów 90/66, 71-143 Zielona Góra'
+                                                city: Rumia
+                                                postcode: 06-761
+                                                created_at: '2022-05-04T19:17:33.000000Z'
+                                                updated_at: '2022-05-04T19:17:33.000000Z'
+                                                deleted_at: null
+                                                employees:
+                                                    -   id: 6c65c45d-a2dc-432b-b87d-a51d0e1b8cf6
+                                                        email: ewa.wilk@example.com
+                                                        first_name: Olga
+                                                        last_name: Brzezińska
+                                                        phone_number: 0048(53)0710616
+                                                        created_at: '2022-05-04T19:17:33.000000Z'
+                                                        updated_at: '2022-05-04T19:17:33.000000Z'
+                                                        deleted_at: null
+                                                        company_id: 529cb14d-70e6-40d9-a32e-478a1cc80fce
+                                                    -   id: 308446b3-e779-4ad8-b33f-adfc39ad84ee
+                                                        email: lwojciechowski@example.net
+                                                        first_name: Nela
+                                                        last_name: Makowski
+                                                        phone_number: '0048 351 031 670'
+                                                        created_at: '2022-05-04T19:17:33.000000Z'
+                                                        updated_at: '2022-05-04T19:17:33.000000Z'
+                                                        deleted_at: null
+                                                        company_id: 529cb14d-70e6-40d9-a32e-478a1cc80fce
+                                                    -   id: 2c474175-83bd-4c98-ba2b-c15164e19c86
+                                                        email: fkowalczyk@example.org
+                                                        first_name: Ksawery
+                                                        last_name: Zając
+                                                        phone_number: '+48 96 886 15 40'
+                                                        created_at: '2022-05-04T19:17:33.000000Z'
+                                                        updated_at: '2022-05-04T19:17:33.000000Z'
+                                                        deleted_at: null
+                                                        company_id: 529cb14d-70e6-40d9-a32e-478a1cc80fce
+                                                    -   id: 77f09e5a-7639-4db8-be08-b812c4ee0191
+                                                        email: aleksander75@example.net
+                                                        first_name: Julia
+                                                        last_name: Górska
+                                                        phone_number: '763 668 997'
+                                                        created_at: '2022-05-04T19:17:33.000000Z'
+                                                        updated_at: '2022-05-04T19:17:33.000000Z'
+                                                        deleted_at: null
+                                                        company_id: 529cb14d-70e6-40d9-a32e-478a1cc80fce
+                                                    -   id: 349065bd-72a5-49c9-8f92-a41156c82be1
+                                                        email: oliwia.wilk@example.com
+                                                        first_name: Oliwier
+                                                        last_name: Kołodziej
+                                                        phone_number: '0048 26 502 48 89'
+                                                        created_at: '2022-05-04T19:17:33.000000Z'
+                                                        updated_at: '2022-05-04T19:17:33.000000Z'
+                                                        deleted_at: null
+                                                        company_id: 529cb14d-70e6-40d9-a32e-478a1cc80fce
+                                                    -   id: e31ecb36-acb2-4456-bb58-c19906966498
+                                                        email: jan.kowalski@example.com
+                                                        first_name: Jan
+                                                        last_name: Kowalski
+                                                        phone_number: '+48791000000'
+                                                        created_at: '2022-05-04T19:19:15.000000Z'
+                                                        updated_at: '2022-05-04T19:19:15.000000Z'
+                                                        deleted_at: null
+                                                        company_id: 529cb14d-70e6-40d9-a32e-478a1cc80fce
+                                            -   id: 6a3d5db9-1180-4795-a246-0ad29405e747
+                                                name: 'Szczepański sp. j.'
+                                                nip: '1984834526'
+                                                address: 'Ściegiennego Piotra 98/93, 57-943 Bolesławiec'
+                                                city: Jaworzno
+                                                postcode: 69-884
+                                                created_at: '2022-05-04T19:17:33.000000Z'
+                                                updated_at: '2022-05-04T19:17:33.000000Z'
+                                                deleted_at: null
+                                                employees:
+                                                    -   id: 815433f4-3784-4c6d-9cbd-ec1ec1417547
+                                                        email: sadowski.gustaw@example.net
+                                                        first_name: Stanisław
+                                                        last_name: Adamska
+                                                        phone_number: '+48 56 192 25 28'
+                                                        created_at: '2022-05-04T19:17:33.000000Z'
+                                                        updated_at: '2022-05-04T19:17:33.000000Z'
+                                                        deleted_at: null
+                                                        company_id: 6a3d5db9-1180-4795-a246-0ad29405e747
+                                                    -   id: 60a46644-aee0-402b-acc8-d082743bdfe2
+                                                        email: zalewska.katarzyna@example.com
+                                                        first_name: Patryk
+                                                        last_name: Kamiński
+                                                        phone_number: '0048 011 659 073'
+                                                        created_at: '2022-05-04T19:17:33.000000Z'
+                                                        updated_at: '2022-05-04T19:17:33.000000Z'
+                                                        deleted_at: null
+                                                        company_id: 6a3d5db9-1180-4795-a246-0ad29405e747
+                                                    -   id: aacddc0a-e914-49a1-9e69-ec9ab88df123
+                                                        email: nadia.piotrowska@example.org
+                                                        first_name: Błażej
+                                                        last_name: Laskowski
+                                                        phone_number: '256418804'
+                                                        created_at: '2022-05-04T19:17:33.000000Z'
+                                                        updated_at: '2022-05-04T19:17:33.000000Z'
+                                                        deleted_at: null
+                                                        company_id: 6a3d5db9-1180-4795-a246-0ad29405e747
+                                                    -   id: 25a9f404-301e-40bc-a581-84621e1ade26
+                                                        email: wilk.kamil@example.org
+                                                        first_name: Pola
+                                                        last_name: Pawlak
+                                                        phone_number: 0048(52)5873641
+                                                        created_at: '2022-05-04T19:17:33.000000Z'
+                                                        updated_at: '2022-05-04T19:17:33.000000Z'
+                                                        deleted_at: null
+                                                        company_id: 6a3d5db9-1180-4795-a246-0ad29405e747
+                                                    -   id: f91a1995-f6eb-42bf-a167-e9ef176209d6
+                                                        email: rkowalczyk@example.net
+                                                        first_name: Dominika
+                                                        last_name: Brzezińska
+                                                        phone_number: 0048(83)9519872
+                                                        created_at: '2022-05-04T19:17:33.000000Z'
+                                                        updated_at: '2022-05-04T19:17:33.000000Z'
+                                                        deleted_at: null
+                                                        company_id: 6a3d5db9-1180-4795-a246-0ad29405e747
+                                            -   id: 1bfedd4c-e86e-42c1-8e06-58d30651ac14
+                                                name: Bąk
+                                                nip: '4575081284'
+                                                address: 'Żurawia 87/91, 21-999 Starachowice'
+                                                city: Police
+                                                postcode: 31-697
+                                                created_at: '2022-05-04T19:17:33.000000Z'
+                                                updated_at: '2022-05-04T19:17:33.000000Z'
+                                                deleted_at: null
+                                                employees:
+                                                    -   id: b0592150-bf06-45b9-ad1b-7686b1ab7774
+                                                        email: dominika.wisniewska@example.org
+                                                        first_name: Jacek
+                                                        last_name: Błaszczyk
+                                                        phone_number: '767373957'
+                                                        created_at: '2022-05-04T19:17:33.000000Z'
+                                                        updated_at: '2022-05-04T19:17:33.000000Z'
+                                                        deleted_at: null
+                                                        company_id: 1bfedd4c-e86e-42c1-8e06-58d30651ac14
+                                                    -   id: ae9069e0-fbe2-446c-971e-523a3c47ecb8
+                                                        email: maria57@example.net
+                                                        first_name: Nataniel
+                                                        last_name: Baranowska
+                                                        phone_number: '0048 381 309 300'
+                                                        created_at: '2022-05-04T19:17:33.000000Z'
+                                                        updated_at: '2022-05-04T19:17:33.000000Z'
+                                                        deleted_at: null
+                                                        company_id: 1bfedd4c-e86e-42c1-8e06-58d30651ac14
+                                                    -   id: f6c83f1e-ecd3-47e9-aa75-dd4788846c91
+                                                        email: fstepien@example.org
+                                                        first_name: Damian
+                                                        last_name: Michalski
+                                                        phone_number: '0048 01 680 52 02'
+                                                        created_at: '2022-05-04T19:17:33.000000Z'
+                                                        updated_at: '2022-05-04T19:17:33.000000Z'
+                                                        deleted_at: null
+                                                        company_id: 1bfedd4c-e86e-42c1-8e06-58d30651ac14
+                                                    -   id: a204125b-b0e8-4752-90f2-19267b327963
+                                                        email: pawlak.jeremi@example.com
+                                                        first_name: Klara
+                                                        last_name: Kalinowska
+                                                        phone_number: '0048 06 027 83 77'
+                                                        created_at: '2022-05-04T19:17:33.000000Z'
+                                                        updated_at: '2022-05-04T19:17:33.000000Z'
+                                                        deleted_at: null
+                                                        company_id: 1bfedd4c-e86e-42c1-8e06-58d30651ac14
+                                                    -   id: 59f927c9-5c68-4462-b333-fd1bbbe5034e
+                                                        email: jaworski.laura@example.net
+                                                        first_name: Dagmara
+                                                        last_name: Król
+                                                        phone_number: '+48 61 207 41 44'
+                                                        created_at: '2022-05-04T19:17:33.000000Z'
+                                                        updated_at: '2022-05-04T19:17:33.000000Z'
+                                                        deleted_at: null
+                                                        company_id: 1bfedd4c-e86e-42c1-8e06-58d30651ac14
+                                        items:
+                                            type: object
+            tags:
+                - Company
+            security: [ ]
+    /api/employees:
+        post:
+            summary: 'Create an Employee'
+            description: ''
+            parameters:
+                -   in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -   in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    data:
+                                        id: 6c65c45d-a2dc-432b-b87d-a51d0e1b8cf6
+                                        email: ewa.wilk@example.com
+                                        first_name: Olga
+                                        last_name: Brzezińska
+                                        phone_number: 0048(53)0710616
+                                        created_at: '2022-05-04T19:17:33.000000Z'
+                                        updated_at: '2022-05-04T19:17:33.000000Z'
+                                        deleted_at: null
+                                        company_id: 529cb14d-70e6-40d9-a32e-478a1cc80fce
+                                        company:
+                                            id: 529cb14d-70e6-40d9-a32e-478a1cc80fce
+                                            name: 'Borkowski sp. k.'
+                                            nip: '9814308576'
+                                            address: 'Legionów 90/66, 71-143 Zielona Góra'
+                                            city: Rumia
+                                            postcode: 06-761
+                                            created_at: '2022-05-04T19:17:33.000000Z'
+                                            updated_at: '2022-05-04T19:17:33.000000Z'
+                                            deleted_at: null
+                                properties:
+                                    data:
+                                        type: object
+                                        example:
+                                            id: 6c65c45d-a2dc-432b-b87d-a51d0e1b8cf6
+                                            email: ewa.wilk@example.com
+                                            first_name: Olga
+                                            last_name: Brzezińska
+                                            phone_number: 0048(53)0710616
+                                            created_at: '2022-05-04T19:17:33.000000Z'
+                                            updated_at: '2022-05-04T19:17:33.000000Z'
+                                            deleted_at: null
+                                            company_id: 529cb14d-70e6-40d9-a32e-478a1cc80fce
+                                            company:
+                                                id: 529cb14d-70e6-40d9-a32e-478a1cc80fce
+                                                name: 'Borkowski sp. k.'
+                                                nip: '9814308576'
+                                                address: 'Legionów 90/66, 71-143 Zielona Góra'
+                                                city: Rumia
+                                                postcode: 06-761
+                                                created_at: '2022-05-04T19:17:33.000000Z'
+                                                updated_at: '2022-05-04T19:17:33.000000Z'
+                                                deleted_at: null
+            tags:
+                - Employee
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                first_name:
+                                    type: string
+                                    description: 'Employee''s first name'
+                                    example: Jan
+                                last_name:
+                                    type: string
+                                    description: 'Employee''s last name'
+                                    example: Kowalski
+                                email:
+                                    type: string
+                                    description: 'Employee''s email'
+                                    example: jan.kowalski@example.com
+                                phone_number:
+                                    type: string
+                                    description: 'Employee''s phone number'
+                                    example: '+48791000000'
+                                company_id:
+                                    type: uuid
+                                    description: 'Employee''s company ID'
+                                    example: 7b081c01-b5b4-4480-bf86-30e59bbed6a0
+                            required:
+                                - first_name
+                                - last_name
+                                - email
+                                - phone_number
+                                - company_id
+            security: [ ]
+        get:
+            summary: 'Get all Employees'
+            description: ''
+            parameters:
+                -   in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -   in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    data:
+                                        -   id: 6c65c45d-a2dc-432b-b87d-a51d0e1b8cf6
+                                            email: ewa.wilk@example.com
+                                            first_name: Olga
+                                            last_name: Brzezińska
+                                            phone_number: 0048(53)0710616
+                                            created_at: '2022-05-04T19:17:33.000000Z'
+                                            updated_at: '2022-05-04T19:17:33.000000Z'
+                                            deleted_at: null
+                                            company_id: 529cb14d-70e6-40d9-a32e-478a1cc80fce
+                                            company:
+                                                id: 529cb14d-70e6-40d9-a32e-478a1cc80fce
+                                                name: 'Borkowski sp. k.'
+                                                nip: '9814308576'
+                                                address: 'Legionów 90/66, 71-143 Zielona Góra'
+                                                city: Rumia
+                                                postcode: 06-761
+                                                created_at: '2022-05-04T19:17:33.000000Z'
+                                                updated_at: '2022-05-04T19:17:33.000000Z'
+                                                deleted_at: null
+                                        -   id: 308446b3-e779-4ad8-b33f-adfc39ad84ee
+                                            email: lwojciechowski@example.net
+                                            first_name: Nela
+                                            last_name: Makowski
+                                            phone_number: '0048 351 031 670'
+                                            created_at: '2022-05-04T19:17:33.000000Z'
+                                            updated_at: '2022-05-04T19:17:33.000000Z'
+                                            deleted_at: null
+                                            company_id: 529cb14d-70e6-40d9-a32e-478a1cc80fce
+                                            company:
+                                                id: 529cb14d-70e6-40d9-a32e-478a1cc80fce
+                                                name: 'Borkowski sp. k.'
+                                                nip: '9814308576'
+                                                address: 'Legionów 90/66, 71-143 Zielona Góra'
+                                                city: Rumia
+                                                postcode: 06-761
+                                                created_at: '2022-05-04T19:17:33.000000Z'
+                                                updated_at: '2022-05-04T19:17:33.000000Z'
+                                                deleted_at: null
+                                        -   id: 2c474175-83bd-4c98-ba2b-c15164e19c86
+                                            email: fkowalczyk@example.org
+                                            first_name: Ksawery
+                                            last_name: Zając
+                                            phone_number: '+48 96 886 15 40'
+                                            created_at: '2022-05-04T19:17:33.000000Z'
+                                            updated_at: '2022-05-04T19:17:33.000000Z'
+                                            deleted_at: null
+                                            company_id: 529cb14d-70e6-40d9-a32e-478a1cc80fce
+                                            company:
+                                                id: 529cb14d-70e6-40d9-a32e-478a1cc80fce
+                                                name: 'Borkowski sp. k.'
+                                                nip: '9814308576'
+                                                address: 'Legionów 90/66, 71-143 Zielona Góra'
+                                                city: Rumia
+                                                postcode: 06-761
+                                                created_at: '2022-05-04T19:17:33.000000Z'
+                                                updated_at: '2022-05-04T19:17:33.000000Z'
+                                                deleted_at: null
+                                properties:
+                                    data:
+                                        type: array
+                                        example:
+                                            -   id: 6c65c45d-a2dc-432b-b87d-a51d0e1b8cf6
+                                                email: ewa.wilk@example.com
+                                                first_name: Olga
+                                                last_name: Brzezińska
+                                                phone_number: 0048(53)0710616
+                                                created_at: '2022-05-04T19:17:33.000000Z'
+                                                updated_at: '2022-05-04T19:17:33.000000Z'
+                                                deleted_at: null
+                                                company_id: 529cb14d-70e6-40d9-a32e-478a1cc80fce
+                                                company:
+                                                    id: 529cb14d-70e6-40d9-a32e-478a1cc80fce
+                                                    name: 'Borkowski sp. k.'
+                                                    nip: '9814308576'
+                                                    address: 'Legionów 90/66, 71-143 Zielona Góra'
+                                                    city: Rumia
+                                                    postcode: 06-761
+                                                    created_at: '2022-05-04T19:17:33.000000Z'
+                                                    updated_at: '2022-05-04T19:17:33.000000Z'
+                                                    deleted_at: null
+                                            -   id: 308446b3-e779-4ad8-b33f-adfc39ad84ee
+                                                email: lwojciechowski@example.net
+                                                first_name: Nela
+                                                last_name: Makowski
+                                                phone_number: '0048 351 031 670'
+                                                created_at: '2022-05-04T19:17:33.000000Z'
+                                                updated_at: '2022-05-04T19:17:33.000000Z'
+                                                deleted_at: null
+                                                company_id: 529cb14d-70e6-40d9-a32e-478a1cc80fce
+                                                company:
+                                                    id: 529cb14d-70e6-40d9-a32e-478a1cc80fce
+                                                    name: 'Borkowski sp. k.'
+                                                    nip: '9814308576'
+                                                    address: 'Legionów 90/66, 71-143 Zielona Góra'
+                                                    city: Rumia
+                                                    postcode: 06-761
+                                                    created_at: '2022-05-04T19:17:33.000000Z'
+                                                    updated_at: '2022-05-04T19:17:33.000000Z'
+                                                    deleted_at: null
+                                            -   id: 2c474175-83bd-4c98-ba2b-c15164e19c86
+                                                email: fkowalczyk@example.org
+                                                first_name: Ksawery
+                                                last_name: Zając
+                                                phone_number: '+48 96 886 15 40'
+                                                created_at: '2022-05-04T19:17:33.000000Z'
+                                                updated_at: '2022-05-04T19:17:33.000000Z'
+                                                deleted_at: null
+                                                company_id: 529cb14d-70e6-40d9-a32e-478a1cc80fce
+                                                company:
+                                                    id: 529cb14d-70e6-40d9-a32e-478a1cc80fce
+                                                    name: 'Borkowski sp. k.'
+                                                    nip: '9814308576'
+                                                    address: 'Legionów 90/66, 71-143 Zielona Góra'
+                                                    city: Rumia
+                                                    postcode: 06-761
+                                                    created_at: '2022-05-04T19:17:33.000000Z'
+                                                    updated_at: '2022-05-04T19:17:33.000000Z'
+                                                    deleted_at: null
+                                        items:
+                                            type: object
+            tags:
+                - Employee
+            security: [ ]
+    '/api/employees/{employee}':
+        get:
+            summary: 'Get an Employee'
+            description: ''
+            parameters:
+                -   in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -   in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    data:
+                                        id: 6c65c45d-a2dc-432b-b87d-a51d0e1b8cf6
+                                        email: ewa.wilk@example.com
+                                        first_name: Olga
+                                        last_name: Brzezińska
+                                        phone_number: 0048(53)0710616
+                                        created_at: '2022-05-04T19:17:33.000000Z'
+                                        updated_at: '2022-05-04T19:17:33.000000Z'
+                                        deleted_at: null
+                                        company_id: 529cb14d-70e6-40d9-a32e-478a1cc80fce
+                                        company:
+                                            id: 529cb14d-70e6-40d9-a32e-478a1cc80fce
+                                            name: 'Borkowski sp. k.'
+                                            nip: '9814308576'
+                                            address: 'Legionów 90/66, 71-143 Zielona Góra'
+                                            city: Rumia
+                                            postcode: 06-761
+                                            created_at: '2022-05-04T19:17:33.000000Z'
+                                            updated_at: '2022-05-04T19:17:33.000000Z'
+                                            deleted_at: null
+                                properties:
+                                    data:
+                                        type: object
+                                        example:
+                                            id: 6c65c45d-a2dc-432b-b87d-a51d0e1b8cf6
+                                            email: ewa.wilk@example.com
+                                            first_name: Olga
+                                            last_name: Brzezińska
+                                            phone_number: 0048(53)0710616
+                                            created_at: '2022-05-04T19:17:33.000000Z'
+                                            updated_at: '2022-05-04T19:17:33.000000Z'
+                                            deleted_at: null
+                                            company_id: 529cb14d-70e6-40d9-a32e-478a1cc80fce
+                                            company:
+                                                id: 529cb14d-70e6-40d9-a32e-478a1cc80fce
+                                                name: 'Borkowski sp. k.'
+                                                nip: '9814308576'
+                                                address: 'Legionów 90/66, 71-143 Zielona Góra'
+                                                city: Rumia
+                                                postcode: 06-761
+                                                created_at: '2022-05-04T19:17:33.000000Z'
+                                                updated_at: '2022-05-04T19:17:33.000000Z'
+                                                deleted_at: null
+            tags:
+                - Employee
+            security: [ ]
+        patch:
+            summary: 'Create an Employee'
+            description: ''
+            parameters:
+                -   in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -   in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    data:
+                                        id: 6c65c45d-a2dc-432b-b87d-a51d0e1b8cf6
+                                        email: ewa.wilk@example.com
+                                        first_name: Olga
+                                        last_name: Brzezińska
+                                        phone_number: 0048(53)0710616
+                                        created_at: '2022-05-04T19:17:33.000000Z'
+                                        updated_at: '2022-05-04T19:17:33.000000Z'
+                                        deleted_at: null
+                                        company_id: 529cb14d-70e6-40d9-a32e-478a1cc80fce
+                                        company:
+                                            id: 529cb14d-70e6-40d9-a32e-478a1cc80fce
+                                            name: 'Borkowski sp. k.'
+                                            nip: '9814308576'
+                                            address: 'Legionów 90/66, 71-143 Zielona Góra'
+                                            city: Rumia
+                                            postcode: 06-761
+                                            created_at: '2022-05-04T19:17:33.000000Z'
+                                            updated_at: '2022-05-04T19:17:33.000000Z'
+                                            deleted_at: null
+                                properties:
+                                    data:
+                                        type: object
+                                        example:
+                                            id: 6c65c45d-a2dc-432b-b87d-a51d0e1b8cf6
+                                            email: ewa.wilk@example.com
+                                            first_name: Olga
+                                            last_name: Brzezińska
+                                            phone_number: 0048(53)0710616
+                                            created_at: '2022-05-04T19:17:33.000000Z'
+                                            updated_at: '2022-05-04T19:17:33.000000Z'
+                                            deleted_at: null
+                                            company_id: 529cb14d-70e6-40d9-a32e-478a1cc80fce
+                                            company:
+                                                id: 529cb14d-70e6-40d9-a32e-478a1cc80fce
+                                                name: 'Borkowski sp. k.'
+                                                nip: '9814308576'
+                                                address: 'Legionów 90/66, 71-143 Zielona Góra'
+                                                city: Rumia
+                                                postcode: 06-761
+                                                created_at: '2022-05-04T19:17:33.000000Z'
+                                                updated_at: '2022-05-04T19:17:33.000000Z'
+                                                deleted_at: null
+            tags:
+                - Employee
+            requestBody:
+                required: false
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                email:
+                                    type: string
+                                    description: 'Employee''s email'
+                                    example: jan.kowalski@example.com
+                                first_name:
+                                    type: string
+                                    description: 'Employee''s first name'
+                                    example: Jan
+                                last_name:
+                                    type: string
+                                    description: 'Employee''s last name'
+                                    example: Kowalski
+                                phone_number:
+                                    type: string
+                                    description: 'Employee''s phone number'
+                                    example: '+48791000000'
+                                company_id:
+                                    type: uuid
+                                    description: 'Employee''s company ID'
+                                    example: 7b081c01-b5b4-4480-bf86-30e59bbed6a0
+            security: [ ]
+        delete:
+            summary: 'Delete an Employee'
+            description: ''
+            parameters:
+                -   in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -   in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses: { }
+            tags:
+                - Employee
+            security: [ ]
+        parameters:
+            -   in: path
+                name: employee
+                description: ''
+                example: 6c65c45d-a2dc-432b-b87d-a51d0e1b8cf6
+                required: true
+                schema:
+                    type: string
+tags:
+    -   name: Company
+        description: ''
+    -   name: Employee
+        description: ''

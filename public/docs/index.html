@@ -1,0 +1,1896 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>larva</title>
+
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../docs/css/theme-default.style.css" media="screen">
+    <link rel="stylesheet" href="../docs/css/theme-default.print.css" media="print">
+
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.10/lodash.min.js"></script>
+
+    <link rel="stylesheet"
+          href="https://unpkg.com/@highlightjs/cdn-assets@10.7.2/styles/obsidian.min.css">
+    <script src="https://unpkg.com/@highlightjs/cdn-assets@10.7.2/highlight.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jets/0.14.1/jets.min.js"></script>
+
+    <style id="language-style">
+        /* starts out as display none and is replaced with js later  */
+        body .content .bash-example code {
+            display: none;
+        }
+
+        body .content .javascript-example code {
+            display: none;
+        }
+    </style>
+
+    <script>
+        var baseUrl = "http://localhost:8080";
+        var useCsrf = Boolean();
+        var csrfUrl = "/sanctum/csrf-cookie";
+    </script>
+    <script src="../docs/js/tryitout-3.27.0.js"></script>
+
+    <script src="../docs/js/theme-default-3.27.0.js"></script>
+
+</head>
+
+<body data-languages="[&quot;bash&quot;,&quot;javascript&quot;]">
+
+<a href="#" id="nav-button">
+    <span>
+        MENU
+        <img src="../docs/images/navbar.png" alt="navbar-image"/>
+    </span>
+</a>
+<div class="tocify-wrapper">
+
+    <div class="lang-selector">
+        <button type="button" class="lang-button" data-language-name="bash">bash</button>
+        <button type="button" class="lang-button" data-language-name="javascript">javascript</button>
+    </div>
+
+    <div class="search">
+        <input type="text" class="search" id="input-search" placeholder="Search">
+    </div>
+
+    <div id="toc">
+        <ul id="tocify-header-0" class="tocify-header">
+            <li class="tocify-item level-1" data-unique="introduction">
+                <a href="#introduction">Introduction</a>
+            </li>
+
+        </ul>
+        <ul id="tocify-header-1" class="tocify-header">
+            <li class="tocify-item level-1" data-unique="authenticating-requests">
+                <a href="#authenticating-requests">Authenticating requests</a>
+            </li>
+
+        </ul>
+
+        <ul id="tocify-header-2" class="tocify-header">
+            <li class="tocify-item level-1" data-unique="company">
+                <a href="#company">Company</a>
+            </li>
+            <ul id="tocify-subheader-company" class="tocify-subheader">
+                <li class="tocify-item level-2" data-unique="company-DELETEapi-companies--company-">
+                    <a href="#company-DELETEapi-companies--company-">Delete a Company</a>
+                </li>
+                <li class="tocify-item level-2" data-unique="company-POSTapi-companies">
+                    <a href="#company-POSTapi-companies">Create a Company</a>
+                </li>
+                <li class="tocify-item level-2" data-unique="company-GETapi-companies--company-">
+                    <a href="#company-GETapi-companies--company-">Get a Company</a>
+                </li>
+                <li class="tocify-item level-2" data-unique="company-PATCHapi-companies--company-">
+                    <a href="#company-PATCHapi-companies--company-">Update a Company</a>
+                </li>
+                <li class="tocify-item level-2" data-unique="company-GETapi-companies">
+                    <a href="#company-GETapi-companies">Get all Companies</a>
+                </li>
+            </ul>
+        </ul>
+        <ul id="tocify-header-3" class="tocify-header">
+            <li class="tocify-item level-1" data-unique="employee">
+                <a href="#employee">Employee</a>
+            </li>
+            <ul id="tocify-subheader-employee" class="tocify-subheader">
+                <li class="tocify-item level-2" data-unique="employee-POSTapi-employees">
+                    <a href="#employee-POSTapi-employees">Create an Employee</a>
+                </li>
+                <li class="tocify-item level-2" data-unique="employee-GETapi-employees--employee-">
+                    <a href="#employee-GETapi-employees--employee-">Get an Employee</a>
+                </li>
+                <li class="tocify-item level-2" data-unique="employee-PATCHapi-employees--employee-">
+                    <a href="#employee-PATCHapi-employees--employee-">Create an Employee</a>
+                </li>
+                <li class="tocify-item level-2" data-unique="employee-DELETEapi-employees--employee-">
+                    <a href="#employee-DELETEapi-employees--employee-">Delete an Employee</a>
+                </li>
+                <li class="tocify-item level-2" data-unique="employee-GETapi-employees">
+                    <a href="#employee-GETapi-employees">Get all Employees</a>
+                </li>
+            </ul>
+        </ul>
+
+
+    </div>
+
+    <ul class="toc-footer" id="toc-footer">
+        <li><a href="../docs/collection.json">View Postman collection</a></li>
+        <li><a href="../docs/openapi.yaml">View OpenAPI spec</a></li>
+        <li><a href="http://github.com/knuckleswtf/scribe">Documentation powered by Scribe ✍</a></li>
+    </ul>
+    <ul class="toc-footer" id="last-updated">
+        <li>Last updated: May 4 2022</li>
+    </ul>
+</div>
+
+<div class="page-wrapper">
+    <div class="dark-box"></div>
+    <div class="content">
+        <h1 id="introduction">Introduction</h1>
+        <p>This documentation aims to provide all the information you need to work with our API.</p>
+        <aside>As you scroll, you'll see code examples for working with the API in different programming languages in
+            the dark area to the right (or as part of the content on mobile).
+            You can switch the language used with the tabs at the top right (or from the nav menu at the top left on
+            mobile).
+        </aside>
+        <blockquote>
+            <p>Base URL</p>
+        </blockquote>
+        <pre><code class="language-yaml">http://localhost:8080</code></pre>
+
+        <h1 id="authenticating-requests">Authenticating requests</h1>
+        <p>This API is not authenticated.</p>
+
+        <h1 id="company">Company</h1>
+
+
+        <h2 id="company-DELETEapi-companies--company-">Delete a Company</h2>
+
+        <p>
+        </p>
+
+
+        <span id="example-requests-DELETEapi-companies--company-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request DELETE \
+    "http://localhost:8080/api/companies/529cb14d-70e6-40d9-a32e-478a1cc80fce" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost:8080/api/companies/529cb14d-70e6-40d9-a32e-478a1cc80fce"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "DELETE",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+        <span id="example-responses-DELETEapi-companies--company-">
+</span>
+        <span id="execution-results-DELETEapi-companies--company-" hidden>
+    <blockquote>Received response<span
+            id="execution-response-status-DELETEapi-companies--company-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-DELETEapi-companies--company-"></code></pre>
+</span>
+        <span id="execution-error-DELETEapi-companies--company-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-DELETEapi-companies--company-"></code></pre>
+</span>
+        <form id="form-DELETEapi-companies--company-" data-method="DELETE"
+              data-path="api/companies/{company}"
+              data-authed="0"
+              data-hasfiles="0"
+              data-isarraybody="0"
+              data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+              autocomplete="off"
+              onsubmit="event.preventDefault(); executeTryOut('DELETEapi-companies--company-', this);">
+            <h3>
+                Request&nbsp;&nbsp;&nbsp;
+                <button type="button"
+                        style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                        id="btn-tryout-DELETEapi-companies--company-"
+                        onclick="tryItOut('DELETEapi-companies--company-');">Try it out ⚡
+                </button>
+                <button type="button"
+                        style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                        id="btn-canceltryout-DELETEapi-companies--company-"
+                        onclick="cancelTryOut('DELETEapi-companies--company-');" hidden>Cancel 🛑
+                </button>&nbsp;&nbsp;
+                <button type="submit"
+                        style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                        id="btn-executetryout-DELETEapi-companies--company-" hidden>Send Request 💥
+                </button>
+            </h3>
+            <p>
+                <small class="badge badge-red">DELETE</small>
+                <b><code>api/companies/{company}</code></b>
+            </p>
+            <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+            <p>
+                <b><code>company</code></b>&nbsp;&nbsp;<small>string</small> &nbsp;
+                <input type="text"
+                       name="company"
+                       data-endpoint="DELETEapi-companies--company-"
+                       value="529cb14d-70e6-40d9-a32e-478a1cc80fce"
+                       data-component="url" hidden>
+                <br>
+
+            </p>
+        </form>
+
+        <h2 id="company-POSTapi-companies">Create a Company</h2>
+
+        <p>
+        </p>
+
+
+        <span id="example-requests-POSTapi-companies">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://localhost:8080/api/companies" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"name\": \"Firma S.A.\",
+    \"nip\": \"7972226391\",
+    \"address\": \"Gołębia 94, 32-058 Opole\",
+    \"city\": \"Opole\",
+    \"postcode\": \"32-058\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost:8080/api/companies"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "name": "Firma S.A.",
+    "nip": "7972226391",
+    "address": "Gołębia 94, 32-058 Opole",
+    "city": "Opole",
+    "postcode": "32-058"
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+        <span id="example-responses-POSTapi-companies">
+            <blockquote>
+            <p>Example response (201):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;data&quot;: {
+        &quot;id&quot;: &quot;529cb14d-70e6-40d9-a32e-478a1cc80fce&quot;,
+        &quot;name&quot;: &quot;Borkowski sp. k.&quot;,
+        &quot;nip&quot;: &quot;9814308576&quot;,
+        &quot;address&quot;: &quot;Legion&oacute;w 90/66, 71-143 Zielona G&oacute;ra&quot;,
+        &quot;city&quot;: &quot;Rumia&quot;,
+        &quot;postcode&quot;: &quot;06-761&quot;,
+        &quot;created_at&quot;: &quot;2022-05-04T19:17:33.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2022-05-04T19:17:33.000000Z&quot;,
+        &quot;deleted_at&quot;: null,
+        &quot;employees&quot;: [
+            {
+                &quot;id&quot;: &quot;6c65c45d-a2dc-432b-b87d-a51d0e1b8cf6&quot;,
+                &quot;email&quot;: &quot;ewa.wilk@example.com&quot;,
+                &quot;first_name&quot;: &quot;Olga&quot;,
+                &quot;last_name&quot;: &quot;Brzezińska&quot;,
+                &quot;phone_number&quot;: &quot;0048(53)0710616&quot;,
+                &quot;created_at&quot;: &quot;2022-05-04T19:17:33.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2022-05-04T19:17:33.000000Z&quot;,
+                &quot;deleted_at&quot;: null,
+                &quot;company_id&quot;: &quot;529cb14d-70e6-40d9-a32e-478a1cc80fce&quot;
+            },
+            {
+                &quot;id&quot;: &quot;308446b3-e779-4ad8-b33f-adfc39ad84ee&quot;,
+                &quot;email&quot;: &quot;lwojciechowski@example.net&quot;,
+                &quot;first_name&quot;: &quot;Nela&quot;,
+                &quot;last_name&quot;: &quot;Makowski&quot;,
+                &quot;phone_number&quot;: &quot;0048 351 031 670&quot;,
+                &quot;created_at&quot;: &quot;2022-05-04T19:17:33.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2022-05-04T19:17:33.000000Z&quot;,
+                &quot;deleted_at&quot;: null,
+                &quot;company_id&quot;: &quot;529cb14d-70e6-40d9-a32e-478a1cc80fce&quot;
+            },
+            {
+                &quot;id&quot;: &quot;2c474175-83bd-4c98-ba2b-c15164e19c86&quot;,
+                &quot;email&quot;: &quot;fkowalczyk@example.org&quot;,
+                &quot;first_name&quot;: &quot;Ksawery&quot;,
+                &quot;last_name&quot;: &quot;Zając&quot;,
+                &quot;phone_number&quot;: &quot;+48 96 886 15 40&quot;,
+                &quot;created_at&quot;: &quot;2022-05-04T19:17:33.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2022-05-04T19:17:33.000000Z&quot;,
+                &quot;deleted_at&quot;: null,
+                &quot;company_id&quot;: &quot;529cb14d-70e6-40d9-a32e-478a1cc80fce&quot;
+            },
+            {
+                &quot;id&quot;: &quot;77f09e5a-7639-4db8-be08-b812c4ee0191&quot;,
+                &quot;email&quot;: &quot;aleksander75@example.net&quot;,
+                &quot;first_name&quot;: &quot;Julia&quot;,
+                &quot;last_name&quot;: &quot;G&oacute;rska&quot;,
+                &quot;phone_number&quot;: &quot;763 668 997&quot;,
+                &quot;created_at&quot;: &quot;2022-05-04T19:17:33.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2022-05-04T19:17:33.000000Z&quot;,
+                &quot;deleted_at&quot;: null,
+                &quot;company_id&quot;: &quot;529cb14d-70e6-40d9-a32e-478a1cc80fce&quot;
+            },
+            {
+                &quot;id&quot;: &quot;349065bd-72a5-49c9-8f92-a41156c82be1&quot;,
+                &quot;email&quot;: &quot;oliwia.wilk@example.com&quot;,
+                &quot;first_name&quot;: &quot;Oliwier&quot;,
+                &quot;last_name&quot;: &quot;Kołodziej&quot;,
+                &quot;phone_number&quot;: &quot;0048 26 502 48 89&quot;,
+                &quot;created_at&quot;: &quot;2022-05-04T19:17:33.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2022-05-04T19:17:33.000000Z&quot;,
+                &quot;deleted_at&quot;: null,
+                &quot;company_id&quot;: &quot;529cb14d-70e6-40d9-a32e-478a1cc80fce&quot;
+            }
+        ]
+    }
+}</code>
+ </pre>
+    </span>
+        <span id="execution-results-POSTapi-companies" hidden>
+    <blockquote>Received response<span
+            id="execution-response-status-POSTapi-companies"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-companies"></code></pre>
+</span>
+        <span id="execution-error-POSTapi-companies" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-companies"></code></pre>
+</span>
+        <form id="form-POSTapi-companies" data-method="POST"
+              data-path="api/companies"
+              data-authed="0"
+              data-hasfiles="0"
+              data-isarraybody="0"
+              data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+              autocomplete="off"
+              onsubmit="event.preventDefault(); executeTryOut('POSTapi-companies', this);">
+            <h3>
+                Request&nbsp;&nbsp;&nbsp;
+                <button type="button"
+                        style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                        id="btn-tryout-POSTapi-companies"
+                        onclick="tryItOut('POSTapi-companies');">Try it out ⚡
+                </button>
+                <button type="button"
+                        style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                        id="btn-canceltryout-POSTapi-companies"
+                        onclick="cancelTryOut('POSTapi-companies');" hidden>Cancel 🛑
+                </button>&nbsp;&nbsp;
+                <button type="submit"
+                        style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                        id="btn-executetryout-POSTapi-companies" hidden>Send Request 💥
+                </button>
+            </h3>
+            <p>
+                <small class="badge badge-black">POST</small>
+                <b><code>api/companies</code></b>
+            </p>
+            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+            <p>
+                <b><code>name</code></b>&nbsp;&nbsp;<small>string</small> &nbsp;
+                <input type="text"
+                       name="name"
+                       data-endpoint="POSTapi-companies"
+                       value="Firma S.A."
+                       data-component="body" hidden>
+                <br>
+            <p>Company name</p>
+            </p>
+            <p>
+                <b><code>nip</code></b>&nbsp;&nbsp;<small>string</small> &nbsp;
+                <input type="text"
+                       name="nip"
+                       data-endpoint="POSTapi-companies"
+                       value="7972226391"
+                       data-component="body" hidden>
+                <br>
+            <p>Company NIP</p>
+            </p>
+            <p>
+                <b><code>address</code></b>&nbsp;&nbsp;<small>string</small> &nbsp;
+                <input type="text"
+                       name="address"
+                       data-endpoint="POSTapi-companies"
+                       value="Gołębia 94, 32-058 Opole"
+                       data-component="body" hidden>
+                <br>
+            <p>Company address</p>
+            </p>
+            <p>
+                <b><code>city</code></b>&nbsp;&nbsp;<small>string</small> &nbsp;
+                <input type="text"
+                       name="city"
+                       data-endpoint="POSTapi-companies"
+                       value="Opole"
+                       data-component="body" hidden>
+                <br>
+            <p>Company city</p>
+            </p>
+            <p>
+                <b><code>postcode</code></b>&nbsp;&nbsp;<small>string</small> &nbsp;
+                <input type="text"
+                       name="postcode"
+                       data-endpoint="POSTapi-companies"
+                       value="32-058"
+                       data-component="body" hidden>
+                <br>
+            <p>Company city postcode</p>
+            </p>
+        </form>
+
+        <h2 id="company-GETapi-companies--company-">Get a Company</h2>
+
+        <p>
+        </p>
+
+
+        <span id="example-requests-GETapi-companies--company-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://localhost:8080/api/companies/529cb14d-70e6-40d9-a32e-478a1cc80fce" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost:8080/api/companies/529cb14d-70e6-40d9-a32e-478a1cc80fce"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+        <span id="example-responses-GETapi-companies--company-">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;data&quot;: {
+        &quot;id&quot;: &quot;529cb14d-70e6-40d9-a32e-478a1cc80fce&quot;,
+        &quot;name&quot;: &quot;Borkowski sp. k.&quot;,
+        &quot;nip&quot;: &quot;9814308576&quot;,
+        &quot;address&quot;: &quot;Legion&oacute;w 90/66, 71-143 Zielona G&oacute;ra&quot;,
+        &quot;city&quot;: &quot;Rumia&quot;,
+        &quot;postcode&quot;: &quot;06-761&quot;,
+        &quot;created_at&quot;: &quot;2022-05-04T19:17:33.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2022-05-04T19:17:33.000000Z&quot;,
+        &quot;deleted_at&quot;: null,
+        &quot;employees&quot;: [
+            {
+                &quot;id&quot;: &quot;6c65c45d-a2dc-432b-b87d-a51d0e1b8cf6&quot;,
+                &quot;email&quot;: &quot;ewa.wilk@example.com&quot;,
+                &quot;first_name&quot;: &quot;Olga&quot;,
+                &quot;last_name&quot;: &quot;Brzezińska&quot;,
+                &quot;phone_number&quot;: &quot;0048(53)0710616&quot;,
+                &quot;created_at&quot;: &quot;2022-05-04T19:17:33.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2022-05-04T19:17:33.000000Z&quot;,
+                &quot;deleted_at&quot;: null,
+                &quot;company_id&quot;: &quot;529cb14d-70e6-40d9-a32e-478a1cc80fce&quot;
+            },
+            {
+                &quot;id&quot;: &quot;308446b3-e779-4ad8-b33f-adfc39ad84ee&quot;,
+                &quot;email&quot;: &quot;lwojciechowski@example.net&quot;,
+                &quot;first_name&quot;: &quot;Nela&quot;,
+                &quot;last_name&quot;: &quot;Makowski&quot;,
+                &quot;phone_number&quot;: &quot;0048 351 031 670&quot;,
+                &quot;created_at&quot;: &quot;2022-05-04T19:17:33.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2022-05-04T19:17:33.000000Z&quot;,
+                &quot;deleted_at&quot;: null,
+                &quot;company_id&quot;: &quot;529cb14d-70e6-40d9-a32e-478a1cc80fce&quot;
+            },
+            {
+                &quot;id&quot;: &quot;2c474175-83bd-4c98-ba2b-c15164e19c86&quot;,
+                &quot;email&quot;: &quot;fkowalczyk@example.org&quot;,
+                &quot;first_name&quot;: &quot;Ksawery&quot;,
+                &quot;last_name&quot;: &quot;Zając&quot;,
+                &quot;phone_number&quot;: &quot;+48 96 886 15 40&quot;,
+                &quot;created_at&quot;: &quot;2022-05-04T19:17:33.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2022-05-04T19:17:33.000000Z&quot;,
+                &quot;deleted_at&quot;: null,
+                &quot;company_id&quot;: &quot;529cb14d-70e6-40d9-a32e-478a1cc80fce&quot;
+            },
+            {
+                &quot;id&quot;: &quot;77f09e5a-7639-4db8-be08-b812c4ee0191&quot;,
+                &quot;email&quot;: &quot;aleksander75@example.net&quot;,
+                &quot;first_name&quot;: &quot;Julia&quot;,
+                &quot;last_name&quot;: &quot;G&oacute;rska&quot;,
+                &quot;phone_number&quot;: &quot;763 668 997&quot;,
+                &quot;created_at&quot;: &quot;2022-05-04T19:17:33.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2022-05-04T19:17:33.000000Z&quot;,
+                &quot;deleted_at&quot;: null,
+                &quot;company_id&quot;: &quot;529cb14d-70e6-40d9-a32e-478a1cc80fce&quot;
+            },
+            {
+                &quot;id&quot;: &quot;349065bd-72a5-49c9-8f92-a41156c82be1&quot;,
+                &quot;email&quot;: &quot;oliwia.wilk@example.com&quot;,
+                &quot;first_name&quot;: &quot;Oliwier&quot;,
+                &quot;last_name&quot;: &quot;Kołodziej&quot;,
+                &quot;phone_number&quot;: &quot;0048 26 502 48 89&quot;,
+                &quot;created_at&quot;: &quot;2022-05-04T19:17:33.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2022-05-04T19:17:33.000000Z&quot;,
+                &quot;deleted_at&quot;: null,
+                &quot;company_id&quot;: &quot;529cb14d-70e6-40d9-a32e-478a1cc80fce&quot;
+            }
+        ]
+    }
+}</code>
+ </pre>
+    </span>
+        <span id="execution-results-GETapi-companies--company-" hidden>
+    <blockquote>Received response<span
+            id="execution-response-status-GETapi-companies--company-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-companies--company-"></code></pre>
+</span>
+        <span id="execution-error-GETapi-companies--company-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-companies--company-"></code></pre>
+</span>
+        <form id="form-GETapi-companies--company-" data-method="GET"
+              data-path="api/companies/{company}"
+              data-authed="0"
+              data-hasfiles="0"
+              data-isarraybody="0"
+              data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+              autocomplete="off"
+              onsubmit="event.preventDefault(); executeTryOut('GETapi-companies--company-', this);">
+            <h3>
+                Request&nbsp;&nbsp;&nbsp;
+                <button type="button"
+                        style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                        id="btn-tryout-GETapi-companies--company-"
+                        onclick="tryItOut('GETapi-companies--company-');">Try it out ⚡
+                </button>
+                <button type="button"
+                        style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                        id="btn-canceltryout-GETapi-companies--company-"
+                        onclick="cancelTryOut('GETapi-companies--company-');" hidden>Cancel 🛑
+                </button>&nbsp;&nbsp;
+                <button type="submit"
+                        style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                        id="btn-executetryout-GETapi-companies--company-" hidden>Send Request 💥
+                </button>
+            </h3>
+            <p>
+                <small class="badge badge-green">GET</small>
+                <b><code>api/companies/{company}</code></b>
+            </p>
+            <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+            <p>
+                <b><code>company</code></b>&nbsp;&nbsp;<small>string</small> &nbsp;
+                <input type="text"
+                       name="company"
+                       data-endpoint="GETapi-companies--company-"
+                       value="529cb14d-70e6-40d9-a32e-478a1cc80fce"
+                       data-component="url" hidden>
+                <br>
+
+            </p>
+        </form>
+
+        <h2 id="company-PATCHapi-companies--company-">Update a Company</h2>
+
+        <p>
+        </p>
+
+
+        <span id="example-requests-PATCHapi-companies--company-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request PATCH \
+    "http://localhost:8080/api/companies/529cb14d-70e6-40d9-a32e-478a1cc80fce" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"name\": \"Firma S.A.\",
+    \"nip\": \"7972226391\",
+    \"address\": \"Gołębia 94, 32-058 Opole\",
+    \"city\": \"Opole\",
+    \"postcode\": \"32-058\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost:8080/api/companies/529cb14d-70e6-40d9-a32e-478a1cc80fce"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "name": "Firma S.A.",
+    "nip": "7972226391",
+    "address": "Gołębia 94, 32-058 Opole",
+    "city": "Opole",
+    "postcode": "32-058"
+};
+
+fetch(url, {
+    method: "PATCH",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+        <span id="example-responses-PATCHapi-companies--company-">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;data&quot;: {
+        &quot;id&quot;: &quot;529cb14d-70e6-40d9-a32e-478a1cc80fce&quot;,
+        &quot;name&quot;: &quot;Borkowski sp. k.&quot;,
+        &quot;nip&quot;: &quot;9814308576&quot;,
+        &quot;address&quot;: &quot;Legion&oacute;w 90/66, 71-143 Zielona G&oacute;ra&quot;,
+        &quot;city&quot;: &quot;Rumia&quot;,
+        &quot;postcode&quot;: &quot;06-761&quot;,
+        &quot;created_at&quot;: &quot;2022-05-04T19:17:33.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2022-05-04T19:17:33.000000Z&quot;,
+        &quot;deleted_at&quot;: null,
+        &quot;employees&quot;: [
+            {
+                &quot;id&quot;: &quot;6c65c45d-a2dc-432b-b87d-a51d0e1b8cf6&quot;,
+                &quot;email&quot;: &quot;ewa.wilk@example.com&quot;,
+                &quot;first_name&quot;: &quot;Olga&quot;,
+                &quot;last_name&quot;: &quot;Brzezińska&quot;,
+                &quot;phone_number&quot;: &quot;0048(53)0710616&quot;,
+                &quot;created_at&quot;: &quot;2022-05-04T19:17:33.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2022-05-04T19:17:33.000000Z&quot;,
+                &quot;deleted_at&quot;: null,
+                &quot;company_id&quot;: &quot;529cb14d-70e6-40d9-a32e-478a1cc80fce&quot;
+            },
+            {
+                &quot;id&quot;: &quot;308446b3-e779-4ad8-b33f-adfc39ad84ee&quot;,
+                &quot;email&quot;: &quot;lwojciechowski@example.net&quot;,
+                &quot;first_name&quot;: &quot;Nela&quot;,
+                &quot;last_name&quot;: &quot;Makowski&quot;,
+                &quot;phone_number&quot;: &quot;0048 351 031 670&quot;,
+                &quot;created_at&quot;: &quot;2022-05-04T19:17:33.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2022-05-04T19:17:33.000000Z&quot;,
+                &quot;deleted_at&quot;: null,
+                &quot;company_id&quot;: &quot;529cb14d-70e6-40d9-a32e-478a1cc80fce&quot;
+            },
+            {
+                &quot;id&quot;: &quot;2c474175-83bd-4c98-ba2b-c15164e19c86&quot;,
+                &quot;email&quot;: &quot;fkowalczyk@example.org&quot;,
+                &quot;first_name&quot;: &quot;Ksawery&quot;,
+                &quot;last_name&quot;: &quot;Zając&quot;,
+                &quot;phone_number&quot;: &quot;+48 96 886 15 40&quot;,
+                &quot;created_at&quot;: &quot;2022-05-04T19:17:33.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2022-05-04T19:17:33.000000Z&quot;,
+                &quot;deleted_at&quot;: null,
+                &quot;company_id&quot;: &quot;529cb14d-70e6-40d9-a32e-478a1cc80fce&quot;
+            },
+            {
+                &quot;id&quot;: &quot;77f09e5a-7639-4db8-be08-b812c4ee0191&quot;,
+                &quot;email&quot;: &quot;aleksander75@example.net&quot;,
+                &quot;first_name&quot;: &quot;Julia&quot;,
+                &quot;last_name&quot;: &quot;G&oacute;rska&quot;,
+                &quot;phone_number&quot;: &quot;763 668 997&quot;,
+                &quot;created_at&quot;: &quot;2022-05-04T19:17:33.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2022-05-04T19:17:33.000000Z&quot;,
+                &quot;deleted_at&quot;: null,
+                &quot;company_id&quot;: &quot;529cb14d-70e6-40d9-a32e-478a1cc80fce&quot;
+            },
+            {
+                &quot;id&quot;: &quot;349065bd-72a5-49c9-8f92-a41156c82be1&quot;,
+                &quot;email&quot;: &quot;oliwia.wilk@example.com&quot;,
+                &quot;first_name&quot;: &quot;Oliwier&quot;,
+                &quot;last_name&quot;: &quot;Kołodziej&quot;,
+                &quot;phone_number&quot;: &quot;0048 26 502 48 89&quot;,
+                &quot;created_at&quot;: &quot;2022-05-04T19:17:33.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2022-05-04T19:17:33.000000Z&quot;,
+                &quot;deleted_at&quot;: null,
+                &quot;company_id&quot;: &quot;529cb14d-70e6-40d9-a32e-478a1cc80fce&quot;
+            }
+        ]
+    }
+}</code>
+ </pre>
+    </span>
+        <span id="execution-results-PATCHapi-companies--company-" hidden>
+    <blockquote>Received response<span
+            id="execution-response-status-PATCHapi-companies--company-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-PATCHapi-companies--company-"></code></pre>
+</span>
+        <span id="execution-error-PATCHapi-companies--company-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-PATCHapi-companies--company-"></code></pre>
+</span>
+        <form id="form-PATCHapi-companies--company-" data-method="PATCH"
+              data-path="api/companies/{company}"
+              data-authed="0"
+              data-hasfiles="0"
+              data-isarraybody="0"
+              data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+              autocomplete="off"
+              onsubmit="event.preventDefault(); executeTryOut('PATCHapi-companies--company-', this);">
+            <h3>
+                Request&nbsp;&nbsp;&nbsp;
+                <button type="button"
+                        style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                        id="btn-tryout-PATCHapi-companies--company-"
+                        onclick="tryItOut('PATCHapi-companies--company-');">Try it out ⚡
+                </button>
+                <button type="button"
+                        style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                        id="btn-canceltryout-PATCHapi-companies--company-"
+                        onclick="cancelTryOut('PATCHapi-companies--company-');" hidden>Cancel 🛑
+                </button>&nbsp;&nbsp;
+                <button type="submit"
+                        style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                        id="btn-executetryout-PATCHapi-companies--company-" hidden>Send Request 💥
+                </button>
+            </h3>
+            <p>
+                <small class="badge badge-purple">PATCH</small>
+                <b><code>api/companies/{company}</code></b>
+            </p>
+            <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+            <p>
+                <b><code>company</code></b>&nbsp;&nbsp;<small>string</small> &nbsp;
+                <input type="text"
+                       name="company"
+                       data-endpoint="PATCHapi-companies--company-"
+                       value="529cb14d-70e6-40d9-a32e-478a1cc80fce"
+                       data-component="url" hidden>
+                <br>
+
+            </p>
+            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+            <p>
+                <b><code>name</code></b>&nbsp;&nbsp;<small>string</small> <i>optional</i> &nbsp;
+                <input type="text"
+                       name="name"
+                       data-endpoint="PATCHapi-companies--company-"
+                       value="Firma S.A."
+                       data-component="body" hidden>
+                <br>
+            <p>Company name</p>
+            </p>
+            <p>
+                <b><code>nip</code></b>&nbsp;&nbsp;<small>string</small> <i>optional</i> &nbsp;
+                <input type="text"
+                       name="nip"
+                       data-endpoint="PATCHapi-companies--company-"
+                       value="7972226391"
+                       data-component="body" hidden>
+                <br>
+            <p>Company NIP</p>
+            </p>
+            <p>
+                <b><code>address</code></b>&nbsp;&nbsp;<small>string</small> <i>optional</i> &nbsp;
+                <input type="text"
+                       name="address"
+                       data-endpoint="PATCHapi-companies--company-"
+                       value="Gołębia 94, 32-058 Opole"
+                       data-component="body" hidden>
+                <br>
+            <p>Company address</p>
+            </p>
+            <p>
+                <b><code>city</code></b>&nbsp;&nbsp;<small>string</small> <i>optional</i> &nbsp;
+                <input type="text"
+                       name="city"
+                       data-endpoint="PATCHapi-companies--company-"
+                       value="Opole"
+                       data-component="body" hidden>
+                <br>
+            <p>Company city</p>
+            </p>
+            <p>
+                <b><code>postcode</code></b>&nbsp;&nbsp;<small>string</small> <i>optional</i> &nbsp;
+                <input type="text"
+                       name="postcode"
+                       data-endpoint="PATCHapi-companies--company-"
+                       value="32-058"
+                       data-component="body" hidden>
+                <br>
+            <p>Company city postcode</p>
+            </p>
+        </form>
+
+        <h2 id="company-GETapi-companies">Get all Companies</h2>
+
+        <p>
+        </p>
+
+
+        <span id="example-requests-GETapi-companies">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://localhost:8080/api/companies" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost:8080/api/companies"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+        <span id="example-responses-GETapi-companies">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;data&quot;: [
+        {
+            &quot;id&quot;: &quot;529cb14d-70e6-40d9-a32e-478a1cc80fce&quot;,
+            &quot;name&quot;: &quot;Borkowski sp. k.&quot;,
+            &quot;nip&quot;: &quot;9814308576&quot;,
+            &quot;address&quot;: &quot;Legion&oacute;w 90/66, 71-143 Zielona G&oacute;ra&quot;,
+            &quot;city&quot;: &quot;Rumia&quot;,
+            &quot;postcode&quot;: &quot;06-761&quot;,
+            &quot;created_at&quot;: &quot;2022-05-04T19:17:33.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-05-04T19:17:33.000000Z&quot;,
+            &quot;deleted_at&quot;: null,
+            &quot;employees&quot;: [
+                {
+                    &quot;id&quot;: &quot;6c65c45d-a2dc-432b-b87d-a51d0e1b8cf6&quot;,
+                    &quot;email&quot;: &quot;ewa.wilk@example.com&quot;,
+                    &quot;first_name&quot;: &quot;Olga&quot;,
+                    &quot;last_name&quot;: &quot;Brzezińska&quot;,
+                    &quot;phone_number&quot;: &quot;0048(53)0710616&quot;,
+                    &quot;created_at&quot;: &quot;2022-05-04T19:17:33.000000Z&quot;,
+                    &quot;updated_at&quot;: &quot;2022-05-04T19:17:33.000000Z&quot;,
+                    &quot;deleted_at&quot;: null,
+                    &quot;company_id&quot;: &quot;529cb14d-70e6-40d9-a32e-478a1cc80fce&quot;
+                },
+                {
+                    &quot;id&quot;: &quot;308446b3-e779-4ad8-b33f-adfc39ad84ee&quot;,
+                    &quot;email&quot;: &quot;lwojciechowski@example.net&quot;,
+                    &quot;first_name&quot;: &quot;Nela&quot;,
+                    &quot;last_name&quot;: &quot;Makowski&quot;,
+                    &quot;phone_number&quot;: &quot;0048 351 031 670&quot;,
+                    &quot;created_at&quot;: &quot;2022-05-04T19:17:33.000000Z&quot;,
+                    &quot;updated_at&quot;: &quot;2022-05-04T19:17:33.000000Z&quot;,
+                    &quot;deleted_at&quot;: null,
+                    &quot;company_id&quot;: &quot;529cb14d-70e6-40d9-a32e-478a1cc80fce&quot;
+                },
+                {
+                    &quot;id&quot;: &quot;2c474175-83bd-4c98-ba2b-c15164e19c86&quot;,
+                    &quot;email&quot;: &quot;fkowalczyk@example.org&quot;,
+                    &quot;first_name&quot;: &quot;Ksawery&quot;,
+                    &quot;last_name&quot;: &quot;Zając&quot;,
+                    &quot;phone_number&quot;: &quot;+48 96 886 15 40&quot;,
+                    &quot;created_at&quot;: &quot;2022-05-04T19:17:33.000000Z&quot;,
+                    &quot;updated_at&quot;: &quot;2022-05-04T19:17:33.000000Z&quot;,
+                    &quot;deleted_at&quot;: null,
+                    &quot;company_id&quot;: &quot;529cb14d-70e6-40d9-a32e-478a1cc80fce&quot;
+                },
+                {
+                    &quot;id&quot;: &quot;77f09e5a-7639-4db8-be08-b812c4ee0191&quot;,
+                    &quot;email&quot;: &quot;aleksander75@example.net&quot;,
+                    &quot;first_name&quot;: &quot;Julia&quot;,
+                    &quot;last_name&quot;: &quot;G&oacute;rska&quot;,
+                    &quot;phone_number&quot;: &quot;763 668 997&quot;,
+                    &quot;created_at&quot;: &quot;2022-05-04T19:17:33.000000Z&quot;,
+                    &quot;updated_at&quot;: &quot;2022-05-04T19:17:33.000000Z&quot;,
+                    &quot;deleted_at&quot;: null,
+                    &quot;company_id&quot;: &quot;529cb14d-70e6-40d9-a32e-478a1cc80fce&quot;
+                },
+                {
+                    &quot;id&quot;: &quot;349065bd-72a5-49c9-8f92-a41156c82be1&quot;,
+                    &quot;email&quot;: &quot;oliwia.wilk@example.com&quot;,
+                    &quot;first_name&quot;: &quot;Oliwier&quot;,
+                    &quot;last_name&quot;: &quot;Kołodziej&quot;,
+                    &quot;phone_number&quot;: &quot;0048 26 502 48 89&quot;,
+                    &quot;created_at&quot;: &quot;2022-05-04T19:17:33.000000Z&quot;,
+                    &quot;updated_at&quot;: &quot;2022-05-04T19:17:33.000000Z&quot;,
+                    &quot;deleted_at&quot;: null,
+                    &quot;company_id&quot;: &quot;529cb14d-70e6-40d9-a32e-478a1cc80fce&quot;
+                },
+                {
+                    &quot;id&quot;: &quot;e31ecb36-acb2-4456-bb58-c19906966498&quot;,
+                    &quot;email&quot;: &quot;jan.kowalski@example.com&quot;,
+                    &quot;first_name&quot;: &quot;Jan&quot;,
+                    &quot;last_name&quot;: &quot;Kowalski&quot;,
+                    &quot;phone_number&quot;: &quot;+48791000000&quot;,
+                    &quot;created_at&quot;: &quot;2022-05-04T19:19:15.000000Z&quot;,
+                    &quot;updated_at&quot;: &quot;2022-05-04T19:19:15.000000Z&quot;,
+                    &quot;deleted_at&quot;: null,
+                    &quot;company_id&quot;: &quot;529cb14d-70e6-40d9-a32e-478a1cc80fce&quot;
+                }
+            ]
+        },
+        {
+            &quot;id&quot;: &quot;6a3d5db9-1180-4795-a246-0ad29405e747&quot;,
+            &quot;name&quot;: &quot;Szczepański sp. j.&quot;,
+            &quot;nip&quot;: &quot;1984834526&quot;,
+            &quot;address&quot;: &quot;Ściegiennego Piotra 98/93, 57-943 Bolesławiec&quot;,
+            &quot;city&quot;: &quot;Jaworzno&quot;,
+            &quot;postcode&quot;: &quot;69-884&quot;,
+            &quot;created_at&quot;: &quot;2022-05-04T19:17:33.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-05-04T19:17:33.000000Z&quot;,
+            &quot;deleted_at&quot;: null,
+            &quot;employees&quot;: [
+                {
+                    &quot;id&quot;: &quot;815433f4-3784-4c6d-9cbd-ec1ec1417547&quot;,
+                    &quot;email&quot;: &quot;sadowski.gustaw@example.net&quot;,
+                    &quot;first_name&quot;: &quot;Stanisław&quot;,
+                    &quot;last_name&quot;: &quot;Adamska&quot;,
+                    &quot;phone_number&quot;: &quot;+48 56 192 25 28&quot;,
+                    &quot;created_at&quot;: &quot;2022-05-04T19:17:33.000000Z&quot;,
+                    &quot;updated_at&quot;: &quot;2022-05-04T19:17:33.000000Z&quot;,
+                    &quot;deleted_at&quot;: null,
+                    &quot;company_id&quot;: &quot;6a3d5db9-1180-4795-a246-0ad29405e747&quot;
+                },
+                {
+                    &quot;id&quot;: &quot;60a46644-aee0-402b-acc8-d082743bdfe2&quot;,
+                    &quot;email&quot;: &quot;zalewska.katarzyna@example.com&quot;,
+                    &quot;first_name&quot;: &quot;Patryk&quot;,
+                    &quot;last_name&quot;: &quot;Kamiński&quot;,
+                    &quot;phone_number&quot;: &quot;0048 011 659 073&quot;,
+                    &quot;created_at&quot;: &quot;2022-05-04T19:17:33.000000Z&quot;,
+                    &quot;updated_at&quot;: &quot;2022-05-04T19:17:33.000000Z&quot;,
+                    &quot;deleted_at&quot;: null,
+                    &quot;company_id&quot;: &quot;6a3d5db9-1180-4795-a246-0ad29405e747&quot;
+                },
+                {
+                    &quot;id&quot;: &quot;aacddc0a-e914-49a1-9e69-ec9ab88df123&quot;,
+                    &quot;email&quot;: &quot;nadia.piotrowska@example.org&quot;,
+                    &quot;first_name&quot;: &quot;Błażej&quot;,
+                    &quot;last_name&quot;: &quot;Laskowski&quot;,
+                    &quot;phone_number&quot;: &quot;256418804&quot;,
+                    &quot;created_at&quot;: &quot;2022-05-04T19:17:33.000000Z&quot;,
+                    &quot;updated_at&quot;: &quot;2022-05-04T19:17:33.000000Z&quot;,
+                    &quot;deleted_at&quot;: null,
+                    &quot;company_id&quot;: &quot;6a3d5db9-1180-4795-a246-0ad29405e747&quot;
+                },
+                {
+                    &quot;id&quot;: &quot;25a9f404-301e-40bc-a581-84621e1ade26&quot;,
+                    &quot;email&quot;: &quot;wilk.kamil@example.org&quot;,
+                    &quot;first_name&quot;: &quot;Pola&quot;,
+                    &quot;last_name&quot;: &quot;Pawlak&quot;,
+                    &quot;phone_number&quot;: &quot;0048(52)5873641&quot;,
+                    &quot;created_at&quot;: &quot;2022-05-04T19:17:33.000000Z&quot;,
+                    &quot;updated_at&quot;: &quot;2022-05-04T19:17:33.000000Z&quot;,
+                    &quot;deleted_at&quot;: null,
+                    &quot;company_id&quot;: &quot;6a3d5db9-1180-4795-a246-0ad29405e747&quot;
+                },
+                {
+                    &quot;id&quot;: &quot;f91a1995-f6eb-42bf-a167-e9ef176209d6&quot;,
+                    &quot;email&quot;: &quot;rkowalczyk@example.net&quot;,
+                    &quot;first_name&quot;: &quot;Dominika&quot;,
+                    &quot;last_name&quot;: &quot;Brzezińska&quot;,
+                    &quot;phone_number&quot;: &quot;0048(83)9519872&quot;,
+                    &quot;created_at&quot;: &quot;2022-05-04T19:17:33.000000Z&quot;,
+                    &quot;updated_at&quot;: &quot;2022-05-04T19:17:33.000000Z&quot;,
+                    &quot;deleted_at&quot;: null,
+                    &quot;company_id&quot;: &quot;6a3d5db9-1180-4795-a246-0ad29405e747&quot;
+                }
+            ]
+        },
+        {
+            &quot;id&quot;: &quot;1bfedd4c-e86e-42c1-8e06-58d30651ac14&quot;,
+            &quot;name&quot;: &quot;Bąk&quot;,
+            &quot;nip&quot;: &quot;4575081284&quot;,
+            &quot;address&quot;: &quot;Żurawia 87/91, 21-999 Starachowice&quot;,
+            &quot;city&quot;: &quot;Police&quot;,
+            &quot;postcode&quot;: &quot;31-697&quot;,
+            &quot;created_at&quot;: &quot;2022-05-04T19:17:33.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-05-04T19:17:33.000000Z&quot;,
+            &quot;deleted_at&quot;: null,
+            &quot;employees&quot;: [
+                {
+                    &quot;id&quot;: &quot;b0592150-bf06-45b9-ad1b-7686b1ab7774&quot;,
+                    &quot;email&quot;: &quot;dominika.wisniewska@example.org&quot;,
+                    &quot;first_name&quot;: &quot;Jacek&quot;,
+                    &quot;last_name&quot;: &quot;Błaszczyk&quot;,
+                    &quot;phone_number&quot;: &quot;767373957&quot;,
+                    &quot;created_at&quot;: &quot;2022-05-04T19:17:33.000000Z&quot;,
+                    &quot;updated_at&quot;: &quot;2022-05-04T19:17:33.000000Z&quot;,
+                    &quot;deleted_at&quot;: null,
+                    &quot;company_id&quot;: &quot;1bfedd4c-e86e-42c1-8e06-58d30651ac14&quot;
+                },
+                {
+                    &quot;id&quot;: &quot;ae9069e0-fbe2-446c-971e-523a3c47ecb8&quot;,
+                    &quot;email&quot;: &quot;maria57@example.net&quot;,
+                    &quot;first_name&quot;: &quot;Nataniel&quot;,
+                    &quot;last_name&quot;: &quot;Baranowska&quot;,
+                    &quot;phone_number&quot;: &quot;0048 381 309 300&quot;,
+                    &quot;created_at&quot;: &quot;2022-05-04T19:17:33.000000Z&quot;,
+                    &quot;updated_at&quot;: &quot;2022-05-04T19:17:33.000000Z&quot;,
+                    &quot;deleted_at&quot;: null,
+                    &quot;company_id&quot;: &quot;1bfedd4c-e86e-42c1-8e06-58d30651ac14&quot;
+                },
+                {
+                    &quot;id&quot;: &quot;f6c83f1e-ecd3-47e9-aa75-dd4788846c91&quot;,
+                    &quot;email&quot;: &quot;fstepien@example.org&quot;,
+                    &quot;first_name&quot;: &quot;Damian&quot;,
+                    &quot;last_name&quot;: &quot;Michalski&quot;,
+                    &quot;phone_number&quot;: &quot;0048 01 680 52 02&quot;,
+                    &quot;created_at&quot;: &quot;2022-05-04T19:17:33.000000Z&quot;,
+                    &quot;updated_at&quot;: &quot;2022-05-04T19:17:33.000000Z&quot;,
+                    &quot;deleted_at&quot;: null,
+                    &quot;company_id&quot;: &quot;1bfedd4c-e86e-42c1-8e06-58d30651ac14&quot;
+                },
+                {
+                    &quot;id&quot;: &quot;a204125b-b0e8-4752-90f2-19267b327963&quot;,
+                    &quot;email&quot;: &quot;pawlak.jeremi@example.com&quot;,
+                    &quot;first_name&quot;: &quot;Klara&quot;,
+                    &quot;last_name&quot;: &quot;Kalinowska&quot;,
+                    &quot;phone_number&quot;: &quot;0048 06 027 83 77&quot;,
+                    &quot;created_at&quot;: &quot;2022-05-04T19:17:33.000000Z&quot;,
+                    &quot;updated_at&quot;: &quot;2022-05-04T19:17:33.000000Z&quot;,
+                    &quot;deleted_at&quot;: null,
+                    &quot;company_id&quot;: &quot;1bfedd4c-e86e-42c1-8e06-58d30651ac14&quot;
+                },
+                {
+                    &quot;id&quot;: &quot;59f927c9-5c68-4462-b333-fd1bbbe5034e&quot;,
+                    &quot;email&quot;: &quot;jaworski.laura@example.net&quot;,
+                    &quot;first_name&quot;: &quot;Dagmara&quot;,
+                    &quot;last_name&quot;: &quot;Kr&oacute;l&quot;,
+                    &quot;phone_number&quot;: &quot;+48 61 207 41 44&quot;,
+                    &quot;created_at&quot;: &quot;2022-05-04T19:17:33.000000Z&quot;,
+                    &quot;updated_at&quot;: &quot;2022-05-04T19:17:33.000000Z&quot;,
+                    &quot;deleted_at&quot;: null,
+                    &quot;company_id&quot;: &quot;1bfedd4c-e86e-42c1-8e06-58d30651ac14&quot;
+                }
+            ]
+        }
+    ]
+}</code>
+ </pre>
+    </span>
+        <span id="execution-results-GETapi-companies" hidden>
+    <blockquote>Received response<span
+            id="execution-response-status-GETapi-companies"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-companies"></code></pre>
+</span>
+        <span id="execution-error-GETapi-companies" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-companies"></code></pre>
+</span>
+        <form id="form-GETapi-companies" data-method="GET"
+              data-path="api/companies"
+              data-authed="0"
+              data-hasfiles="0"
+              data-isarraybody="0"
+              data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+              autocomplete="off"
+              onsubmit="event.preventDefault(); executeTryOut('GETapi-companies', this);">
+            <h3>
+                Request&nbsp;&nbsp;&nbsp;
+                <button type="button"
+                        style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                        id="btn-tryout-GETapi-companies"
+                        onclick="tryItOut('GETapi-companies');">Try it out ⚡
+                </button>
+                <button type="button"
+                        style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                        id="btn-canceltryout-GETapi-companies"
+                        onclick="cancelTryOut('GETapi-companies');" hidden>Cancel 🛑
+                </button>&nbsp;&nbsp;
+                <button type="submit"
+                        style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                        id="btn-executetryout-GETapi-companies" hidden>Send Request 💥
+                </button>
+            </h3>
+            <p>
+                <small class="badge badge-green">GET</small>
+                <b><code>api/companies</code></b>
+            </p>
+        </form>
+
+        <h1 id="employee">Employee</h1>
+
+
+        <h2 id="employee-POSTapi-employees">Create an Employee</h2>
+
+        <p>
+        </p>
+
+
+        <span id="example-requests-POSTapi-employees">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://localhost:8080/api/employees" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"first_name\": \"Jan\",
+    \"last_name\": \"Kowalski\",
+    \"email\": \"jan.kowalski@example.com\",
+    \"phone_number\": \"+48791000000\",
+    \"company_id\": \"7b081c01-b5b4-4480-bf86-30e59bbed6a0\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost:8080/api/employees"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "first_name": "Jan",
+    "last_name": "Kowalski",
+    "email": "jan.kowalski@example.com",
+    "phone_number": "+48791000000",
+    "company_id": "7b081c01-b5b4-4480-bf86-30e59bbed6a0"
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+        <span id="example-responses-POSTapi-employees">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;data&quot;: {
+        &quot;id&quot;: &quot;6c65c45d-a2dc-432b-b87d-a51d0e1b8cf6&quot;,
+        &quot;email&quot;: &quot;ewa.wilk@example.com&quot;,
+        &quot;first_name&quot;: &quot;Olga&quot;,
+        &quot;last_name&quot;: &quot;Brzezińska&quot;,
+        &quot;phone_number&quot;: &quot;0048(53)0710616&quot;,
+        &quot;created_at&quot;: &quot;2022-05-04T19:17:33.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2022-05-04T19:17:33.000000Z&quot;,
+        &quot;deleted_at&quot;: null,
+        &quot;company_id&quot;: &quot;529cb14d-70e6-40d9-a32e-478a1cc80fce&quot;,
+        &quot;company&quot;: {
+            &quot;id&quot;: &quot;529cb14d-70e6-40d9-a32e-478a1cc80fce&quot;,
+            &quot;name&quot;: &quot;Borkowski sp. k.&quot;,
+            &quot;nip&quot;: &quot;9814308576&quot;,
+            &quot;address&quot;: &quot;Legion&oacute;w 90/66, 71-143 Zielona G&oacute;ra&quot;,
+            &quot;city&quot;: &quot;Rumia&quot;,
+            &quot;postcode&quot;: &quot;06-761&quot;,
+            &quot;created_at&quot;: &quot;2022-05-04T19:17:33.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-05-04T19:17:33.000000Z&quot;,
+            &quot;deleted_at&quot;: null
+        }
+    }
+}</code>
+ </pre>
+    </span>
+        <span id="execution-results-POSTapi-employees" hidden>
+    <blockquote>Received response<span
+            id="execution-response-status-POSTapi-employees"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-employees"></code></pre>
+</span>
+        <span id="execution-error-POSTapi-employees" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-employees"></code></pre>
+</span>
+        <form id="form-POSTapi-employees" data-method="POST"
+              data-path="api/employees"
+              data-authed="0"
+              data-hasfiles="0"
+              data-isarraybody="0"
+              data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+              autocomplete="off"
+              onsubmit="event.preventDefault(); executeTryOut('POSTapi-employees', this);">
+            <h3>
+                Request&nbsp;&nbsp;&nbsp;
+                <button type="button"
+                        style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                        id="btn-tryout-POSTapi-employees"
+                        onclick="tryItOut('POSTapi-employees');">Try it out ⚡
+                </button>
+                <button type="button"
+                        style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                        id="btn-canceltryout-POSTapi-employees"
+                        onclick="cancelTryOut('POSTapi-employees');" hidden>Cancel 🛑
+                </button>&nbsp;&nbsp;
+                <button type="submit"
+                        style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                        id="btn-executetryout-POSTapi-employees" hidden>Send Request 💥
+                </button>
+            </h3>
+            <p>
+                <small class="badge badge-black">POST</small>
+                <b><code>api/employees</code></b>
+            </p>
+            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+            <p>
+                <b><code>first_name</code></b>&nbsp;&nbsp;<small>string</small> &nbsp;
+                <input type="text"
+                       name="first_name"
+                       data-endpoint="POSTapi-employees"
+                       value="Jan"
+                       data-component="body" hidden>
+                <br>
+            <p>Employee's first name</p>
+            </p>
+            <p>
+                <b><code>last_name</code></b>&nbsp;&nbsp;<small>string</small> &nbsp;
+                <input type="text"
+                       name="last_name"
+                       data-endpoint="POSTapi-employees"
+                       value="Kowalski"
+                       data-component="body" hidden>
+                <br>
+            <p>Employee's last name</p>
+            </p>
+            <p>
+                <b><code>email</code></b>&nbsp;&nbsp;<small>string</small> &nbsp;
+                <input type="text"
+                       name="email"
+                       data-endpoint="POSTapi-employees"
+                       value="jan.kowalski@example.com"
+                       data-component="body" hidden>
+                <br>
+            <p>Employee's email</p>
+            </p>
+            <p>
+                <b><code>phone_number</code></b>&nbsp;&nbsp;<small>string</small> &nbsp;
+                <input type="text"
+                       name="phone_number"
+                       data-endpoint="POSTapi-employees"
+                       value="+48791000000"
+                       data-component="body" hidden>
+                <br>
+            <p>Employee's phone number</p>
+            </p>
+            <p>
+                <b><code>company_id</code></b>&nbsp;&nbsp;<small>uuid</small> &nbsp;
+                <input type="text"
+                       name="company_id"
+                       data-endpoint="POSTapi-employees"
+                       value="7b081c01-b5b4-4480-bf86-30e59bbed6a0"
+                       data-component="body" hidden>
+                <br>
+            <p>Employee's company ID</p>
+            </p>
+        </form>
+
+        <h2 id="employee-GETapi-employees--employee-">Get an Employee</h2>
+
+        <p>
+        </p>
+
+
+        <span id="example-requests-GETapi-employees--employee-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://localhost:8080/api/employees/6c65c45d-a2dc-432b-b87d-a51d0e1b8cf6" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost:8080/api/employees/6c65c45d-a2dc-432b-b87d-a51d0e1b8cf6"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+        <span id="example-responses-GETapi-employees--employee-">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;data&quot;: {
+        &quot;id&quot;: &quot;6c65c45d-a2dc-432b-b87d-a51d0e1b8cf6&quot;,
+        &quot;email&quot;: &quot;ewa.wilk@example.com&quot;,
+        &quot;first_name&quot;: &quot;Olga&quot;,
+        &quot;last_name&quot;: &quot;Brzezińska&quot;,
+        &quot;phone_number&quot;: &quot;0048(53)0710616&quot;,
+        &quot;created_at&quot;: &quot;2022-05-04T19:17:33.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2022-05-04T19:17:33.000000Z&quot;,
+        &quot;deleted_at&quot;: null,
+        &quot;company_id&quot;: &quot;529cb14d-70e6-40d9-a32e-478a1cc80fce&quot;,
+        &quot;company&quot;: {
+            &quot;id&quot;: &quot;529cb14d-70e6-40d9-a32e-478a1cc80fce&quot;,
+            &quot;name&quot;: &quot;Borkowski sp. k.&quot;,
+            &quot;nip&quot;: &quot;9814308576&quot;,
+            &quot;address&quot;: &quot;Legion&oacute;w 90/66, 71-143 Zielona G&oacute;ra&quot;,
+            &quot;city&quot;: &quot;Rumia&quot;,
+            &quot;postcode&quot;: &quot;06-761&quot;,
+            &quot;created_at&quot;: &quot;2022-05-04T19:17:33.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-05-04T19:17:33.000000Z&quot;,
+            &quot;deleted_at&quot;: null
+        }
+    }
+}</code>
+ </pre>
+    </span>
+        <span id="execution-results-GETapi-employees--employee-" hidden>
+    <blockquote>Received response<span
+            id="execution-response-status-GETapi-employees--employee-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-employees--employee-"></code></pre>
+</span>
+        <span id="execution-error-GETapi-employees--employee-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-employees--employee-"></code></pre>
+</span>
+        <form id="form-GETapi-employees--employee-" data-method="GET"
+              data-path="api/employees/{employee}"
+              data-authed="0"
+              data-hasfiles="0"
+              data-isarraybody="0"
+              data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+              autocomplete="off"
+              onsubmit="event.preventDefault(); executeTryOut('GETapi-employees--employee-', this);">
+            <h3>
+                Request&nbsp;&nbsp;&nbsp;
+                <button type="button"
+                        style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                        id="btn-tryout-GETapi-employees--employee-"
+                        onclick="tryItOut('GETapi-employees--employee-');">Try it out ⚡
+                </button>
+                <button type="button"
+                        style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                        id="btn-canceltryout-GETapi-employees--employee-"
+                        onclick="cancelTryOut('GETapi-employees--employee-');" hidden>Cancel 🛑
+                </button>&nbsp;&nbsp;
+                <button type="submit"
+                        style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                        id="btn-executetryout-GETapi-employees--employee-" hidden>Send Request 💥
+                </button>
+            </h3>
+            <p>
+                <small class="badge badge-green">GET</small>
+                <b><code>api/employees/{employee}</code></b>
+            </p>
+            <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+            <p>
+                <b><code>employee</code></b>&nbsp;&nbsp;<small>string</small> &nbsp;
+                <input type="text"
+                       name="employee"
+                       data-endpoint="GETapi-employees--employee-"
+                       value="6c65c45d-a2dc-432b-b87d-a51d0e1b8cf6"
+                       data-component="url" hidden>
+                <br>
+
+            </p>
+        </form>
+
+        <h2 id="employee-PATCHapi-employees--employee-">Create an Employee</h2>
+
+        <p>
+        </p>
+
+
+        <span id="example-requests-PATCHapi-employees--employee-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request PATCH \
+    "http://localhost:8080/api/employees/6c65c45d-a2dc-432b-b87d-a51d0e1b8cf6" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"email\": \"jan.kowalski@example.com\",
+    \"first_name\": \"Jan\",
+    \"last_name\": \"Kowalski\",
+    \"phone_number\": \"+48791000000\",
+    \"company_id\": \"7b081c01-b5b4-4480-bf86-30e59bbed6a0\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost:8080/api/employees/6c65c45d-a2dc-432b-b87d-a51d0e1b8cf6"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "email": "jan.kowalski@example.com",
+    "first_name": "Jan",
+    "last_name": "Kowalski",
+    "phone_number": "+48791000000",
+    "company_id": "7b081c01-b5b4-4480-bf86-30e59bbed6a0"
+};
+
+fetch(url, {
+    method: "PATCH",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+        <span id="example-responses-PATCHapi-employees--employee-">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;data&quot;: {
+        &quot;id&quot;: &quot;6c65c45d-a2dc-432b-b87d-a51d0e1b8cf6&quot;,
+        &quot;email&quot;: &quot;ewa.wilk@example.com&quot;,
+        &quot;first_name&quot;: &quot;Olga&quot;,
+        &quot;last_name&quot;: &quot;Brzezińska&quot;,
+        &quot;phone_number&quot;: &quot;0048(53)0710616&quot;,
+        &quot;created_at&quot;: &quot;2022-05-04T19:17:33.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2022-05-04T19:17:33.000000Z&quot;,
+        &quot;deleted_at&quot;: null,
+        &quot;company_id&quot;: &quot;529cb14d-70e6-40d9-a32e-478a1cc80fce&quot;,
+        &quot;company&quot;: {
+            &quot;id&quot;: &quot;529cb14d-70e6-40d9-a32e-478a1cc80fce&quot;,
+            &quot;name&quot;: &quot;Borkowski sp. k.&quot;,
+            &quot;nip&quot;: &quot;9814308576&quot;,
+            &quot;address&quot;: &quot;Legion&oacute;w 90/66, 71-143 Zielona G&oacute;ra&quot;,
+            &quot;city&quot;: &quot;Rumia&quot;,
+            &quot;postcode&quot;: &quot;06-761&quot;,
+            &quot;created_at&quot;: &quot;2022-05-04T19:17:33.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-05-04T19:17:33.000000Z&quot;,
+            &quot;deleted_at&quot;: null
+        }
+    }
+}</code>
+ </pre>
+    </span>
+        <span id="execution-results-PATCHapi-employees--employee-" hidden>
+    <blockquote>Received response<span
+            id="execution-response-status-PATCHapi-employees--employee-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-PATCHapi-employees--employee-"></code></pre>
+</span>
+        <span id="execution-error-PATCHapi-employees--employee-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-PATCHapi-employees--employee-"></code></pre>
+</span>
+        <form id="form-PATCHapi-employees--employee-" data-method="PATCH"
+              data-path="api/employees/{employee}"
+              data-authed="0"
+              data-hasfiles="0"
+              data-isarraybody="0"
+              data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+              autocomplete="off"
+              onsubmit="event.preventDefault(); executeTryOut('PATCHapi-employees--employee-', this);">
+            <h3>
+                Request&nbsp;&nbsp;&nbsp;
+                <button type="button"
+                        style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                        id="btn-tryout-PATCHapi-employees--employee-"
+                        onclick="tryItOut('PATCHapi-employees--employee-');">Try it out ⚡
+                </button>
+                <button type="button"
+                        style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                        id="btn-canceltryout-PATCHapi-employees--employee-"
+                        onclick="cancelTryOut('PATCHapi-employees--employee-');" hidden>Cancel 🛑
+                </button>&nbsp;&nbsp;
+                <button type="submit"
+                        style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                        id="btn-executetryout-PATCHapi-employees--employee-" hidden>Send Request 💥
+                </button>
+            </h3>
+            <p>
+                <small class="badge badge-purple">PATCH</small>
+                <b><code>api/employees/{employee}</code></b>
+            </p>
+            <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+            <p>
+                <b><code>employee</code></b>&nbsp;&nbsp;<small>string</small> &nbsp;
+                <input type="text"
+                       name="employee"
+                       data-endpoint="PATCHapi-employees--employee-"
+                       value="6c65c45d-a2dc-432b-b87d-a51d0e1b8cf6"
+                       data-component="url" hidden>
+                <br>
+
+            </p>
+            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+            <p>
+                <b><code>email</code></b>&nbsp;&nbsp;<small>string</small> <i>optional</i> &nbsp;
+                <input type="text"
+                       name="email"
+                       data-endpoint="PATCHapi-employees--employee-"
+                       value="jan.kowalski@example.com"
+                       data-component="body" hidden>
+                <br>
+            <p>Employee's email</p>
+            </p>
+            <p>
+                <b><code>first_name</code></b>&nbsp;&nbsp;<small>string</small> <i>optional</i> &nbsp;
+                <input type="text"
+                       name="first_name"
+                       data-endpoint="PATCHapi-employees--employee-"
+                       value="Jan"
+                       data-component="body" hidden>
+                <br>
+            <p>Employee's first name</p>
+            </p>
+            <p>
+                <b><code>last_name</code></b>&nbsp;&nbsp;<small>string</small> <i>optional</i> &nbsp;
+                <input type="text"
+                       name="last_name"
+                       data-endpoint="PATCHapi-employees--employee-"
+                       value="Kowalski"
+                       data-component="body" hidden>
+                <br>
+            <p>Employee's last name</p>
+            </p>
+            <p>
+                <b><code>phone_number</code></b>&nbsp;&nbsp;<small>string</small> <i>optional</i> &nbsp;
+                <input type="text"
+                       name="phone_number"
+                       data-endpoint="PATCHapi-employees--employee-"
+                       value="+48791000000"
+                       data-component="body" hidden>
+                <br>
+            <p>Employee's phone number</p>
+            </p>
+            <p>
+                <b><code>company_id</code></b>&nbsp;&nbsp;<small>uuid</small> <i>optional</i> &nbsp;
+                <input type="text"
+                       name="company_id"
+                       data-endpoint="PATCHapi-employees--employee-"
+                       value="7b081c01-b5b4-4480-bf86-30e59bbed6a0"
+                       data-component="body" hidden>
+                <br>
+            <p>Employee's company ID</p>
+            </p>
+        </form>
+
+        <h2 id="employee-DELETEapi-employees--employee-">Delete an Employee</h2>
+
+        <p>
+        </p>
+
+
+        <span id="example-requests-DELETEapi-employees--employee-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request DELETE \
+    "http://localhost:8080/api/employees/6c65c45d-a2dc-432b-b87d-a51d0e1b8cf6" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost:8080/api/employees/6c65c45d-a2dc-432b-b87d-a51d0e1b8cf6"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "DELETE",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+        <span id="example-responses-DELETEapi-employees--employee-">
+</span>
+        <span id="execution-results-DELETEapi-employees--employee-" hidden>
+    <blockquote>Received response<span
+            id="execution-response-status-DELETEapi-employees--employee-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-DELETEapi-employees--employee-"></code></pre>
+</span>
+        <span id="execution-error-DELETEapi-employees--employee-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-DELETEapi-employees--employee-"></code></pre>
+</span>
+        <form id="form-DELETEapi-employees--employee-" data-method="DELETE"
+              data-path="api/employees/{employee}"
+              data-authed="0"
+              data-hasfiles="0"
+              data-isarraybody="0"
+              data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+              autocomplete="off"
+              onsubmit="event.preventDefault(); executeTryOut('DELETEapi-employees--employee-', this);">
+            <h3>
+                Request&nbsp;&nbsp;&nbsp;
+                <button type="button"
+                        style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                        id="btn-tryout-DELETEapi-employees--employee-"
+                        onclick="tryItOut('DELETEapi-employees--employee-');">Try it out ⚡
+                </button>
+                <button type="button"
+                        style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                        id="btn-canceltryout-DELETEapi-employees--employee-"
+                        onclick="cancelTryOut('DELETEapi-employees--employee-');" hidden>Cancel 🛑
+                </button>&nbsp;&nbsp;
+                <button type="submit"
+                        style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                        id="btn-executetryout-DELETEapi-employees--employee-" hidden>Send Request 💥
+                </button>
+            </h3>
+            <p>
+                <small class="badge badge-red">DELETE</small>
+                <b><code>api/employees/{employee}</code></b>
+            </p>
+            <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+            <p>
+                <b><code>employee</code></b>&nbsp;&nbsp;<small>string</small> &nbsp;
+                <input type="text"
+                       name="employee"
+                       data-endpoint="DELETEapi-employees--employee-"
+                       value="6c65c45d-a2dc-432b-b87d-a51d0e1b8cf6"
+                       data-component="url" hidden>
+                <br>
+
+            </p>
+        </form>
+
+        <h2 id="employee-GETapi-employees">Get all Employees</h2>
+
+        <p>
+        </p>
+
+
+        <span id="example-requests-GETapi-employees">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://localhost:8080/api/employees" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost:8080/api/employees"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+        <span id="example-responses-GETapi-employees">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;data&quot;: [
+        {
+            &quot;id&quot;: &quot;6c65c45d-a2dc-432b-b87d-a51d0e1b8cf6&quot;,
+            &quot;email&quot;: &quot;ewa.wilk@example.com&quot;,
+            &quot;first_name&quot;: &quot;Olga&quot;,
+            &quot;last_name&quot;: &quot;Brzezińska&quot;,
+            &quot;phone_number&quot;: &quot;0048(53)0710616&quot;,
+            &quot;created_at&quot;: &quot;2022-05-04T19:17:33.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-05-04T19:17:33.000000Z&quot;,
+            &quot;deleted_at&quot;: null,
+            &quot;company_id&quot;: &quot;529cb14d-70e6-40d9-a32e-478a1cc80fce&quot;,
+            &quot;company&quot;: {
+                &quot;id&quot;: &quot;529cb14d-70e6-40d9-a32e-478a1cc80fce&quot;,
+                &quot;name&quot;: &quot;Borkowski sp. k.&quot;,
+                &quot;nip&quot;: &quot;9814308576&quot;,
+                &quot;address&quot;: &quot;Legion&oacute;w 90/66, 71-143 Zielona G&oacute;ra&quot;,
+                &quot;city&quot;: &quot;Rumia&quot;,
+                &quot;postcode&quot;: &quot;06-761&quot;,
+                &quot;created_at&quot;: &quot;2022-05-04T19:17:33.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2022-05-04T19:17:33.000000Z&quot;,
+                &quot;deleted_at&quot;: null
+            }
+        },
+        {
+            &quot;id&quot;: &quot;308446b3-e779-4ad8-b33f-adfc39ad84ee&quot;,
+            &quot;email&quot;: &quot;lwojciechowski@example.net&quot;,
+            &quot;first_name&quot;: &quot;Nela&quot;,
+            &quot;last_name&quot;: &quot;Makowski&quot;,
+            &quot;phone_number&quot;: &quot;0048 351 031 670&quot;,
+            &quot;created_at&quot;: &quot;2022-05-04T19:17:33.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-05-04T19:17:33.000000Z&quot;,
+            &quot;deleted_at&quot;: null,
+            &quot;company_id&quot;: &quot;529cb14d-70e6-40d9-a32e-478a1cc80fce&quot;,
+            &quot;company&quot;: {
+                &quot;id&quot;: &quot;529cb14d-70e6-40d9-a32e-478a1cc80fce&quot;,
+                &quot;name&quot;: &quot;Borkowski sp. k.&quot;,
+                &quot;nip&quot;: &quot;9814308576&quot;,
+                &quot;address&quot;: &quot;Legion&oacute;w 90/66, 71-143 Zielona G&oacute;ra&quot;,
+                &quot;city&quot;: &quot;Rumia&quot;,
+                &quot;postcode&quot;: &quot;06-761&quot;,
+                &quot;created_at&quot;: &quot;2022-05-04T19:17:33.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2022-05-04T19:17:33.000000Z&quot;,
+                &quot;deleted_at&quot;: null
+            }
+        },
+        {
+            &quot;id&quot;: &quot;2c474175-83bd-4c98-ba2b-c15164e19c86&quot;,
+            &quot;email&quot;: &quot;fkowalczyk@example.org&quot;,
+            &quot;first_name&quot;: &quot;Ksawery&quot;,
+            &quot;last_name&quot;: &quot;Zając&quot;,
+            &quot;phone_number&quot;: &quot;+48 96 886 15 40&quot;,
+            &quot;created_at&quot;: &quot;2022-05-04T19:17:33.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-05-04T19:17:33.000000Z&quot;,
+            &quot;deleted_at&quot;: null,
+            &quot;company_id&quot;: &quot;529cb14d-70e6-40d9-a32e-478a1cc80fce&quot;,
+            &quot;company&quot;: {
+                &quot;id&quot;: &quot;529cb14d-70e6-40d9-a32e-478a1cc80fce&quot;,
+                &quot;name&quot;: &quot;Borkowski sp. k.&quot;,
+                &quot;nip&quot;: &quot;9814308576&quot;,
+                &quot;address&quot;: &quot;Legion&oacute;w 90/66, 71-143 Zielona G&oacute;ra&quot;,
+                &quot;city&quot;: &quot;Rumia&quot;,
+                &quot;postcode&quot;: &quot;06-761&quot;,
+                &quot;created_at&quot;: &quot;2022-05-04T19:17:33.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2022-05-04T19:17:33.000000Z&quot;,
+                &quot;deleted_at&quot;: null
+            }
+        }
+    ]
+}</code>
+ </pre>
+    </span>
+        <span id="execution-results-GETapi-employees" hidden>
+    <blockquote>Received response<span
+            id="execution-response-status-GETapi-employees"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-employees"></code></pre>
+</span>
+        <span id="execution-error-GETapi-employees" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-employees"></code></pre>
+</span>
+        <form id="form-GETapi-employees" data-method="GET"
+              data-path="api/employees"
+              data-authed="0"
+              data-hasfiles="0"
+              data-isarraybody="0"
+              data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+              autocomplete="off"
+              onsubmit="event.preventDefault(); executeTryOut('GETapi-employees', this);">
+            <h3>
+                Request&nbsp;&nbsp;&nbsp;
+                <button type="button"
+                        style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                        id="btn-tryout-GETapi-employees"
+                        onclick="tryItOut('GETapi-employees');">Try it out ⚡
+                </button>
+                <button type="button"
+                        style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                        id="btn-canceltryout-GETapi-employees"
+                        onclick="cancelTryOut('GETapi-employees');" hidden>Cancel 🛑
+                </button>&nbsp;&nbsp;
+                <button type="submit"
+                        style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                        id="btn-executetryout-GETapi-employees" hidden>Send Request 💥
+                </button>
+            </h3>
+            <p>
+                <small class="badge badge-green">GET</small>
+                <b><code>api/employees</code></b>
+            </p>
+        </form>
+
+
+    </div>
+    <div class="dark-box">
+        <div class="lang-selector">
+            <button type="button" class="lang-button" data-language-name="bash">bash</button>
+            <button type="button" class="lang-button" data-language-name="javascript">javascript</button>
+        </div>
+    </div>
+</div>
+</body>
+</html>

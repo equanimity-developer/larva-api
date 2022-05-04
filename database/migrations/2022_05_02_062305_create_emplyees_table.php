@@ -20,6 +20,9 @@ return new class extends Migration {
             $table->string('phone_number')->nullable();
             $table->timestampsTz();
             $table->softDeletesTz();
+
+            $table->uuid('company_id');
+            $table->foreign('company_id')->references('id')->on('companies')->cascadeOnDelete();
         });
     }
 

@@ -1,0 +1,430 @@
+{
+    "variable": [
+        {
+            "id": "baseUrl",
+            "key": "baseUrl",
+            "type": "string",
+            "name": "string",
+            "value": "http:\/\/localhost:8080"
+        }
+    ],
+    "info": {
+        "name": "larva",
+        "_postman_id": "38f36a7c-1eb1-4d5c-a0f7-cc7f42a8a84e",
+        "description": "",
+        "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
+    },
+    "item": [
+        {
+            "name": "Company",
+            "description": "",
+            "item": [
+                {
+                    "name": "Delete a Company",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/companies\/:company",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/companies\/:company",
+                            "variable": [
+                                {
+                                    "id": "company",
+                                    "key": "company",
+                                    "value": "529cb14d-70e6-40d9-a32e-478a1cc80fce",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Create a Company",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/companies",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/companies"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"name\":\"Firma S.A.\",\"nip\":\"7972226391\",\"address\":\"Go\u0142\u0119bia 94, 32-058 Opole\",\"city\":\"Opole\",\"postcode\":\"32-058\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 201,
+                            "body": "{\n    \"data\": {\n        \"id\": \"529cb14d-70e6-40d9-a32e-478a1cc80fce\",\n        \"name\": \"Borkowski sp. k.\",\n        \"nip\": \"9814308576\",\n        \"address\": \"Legion\u00f3w 90\/66, 71-143 Zielona G\u00f3ra\",\n        \"city\": \"Rumia\",\n        \"postcode\": \"06-761\",\n        \"created_at\": \"2022-05-04T19:17:33.000000Z\",\n        \"updated_at\": \"2022-05-04T19:17:33.000000Z\",\n        \"deleted_at\": null,\n        \"employees\": [\n            {\n                \"id\": \"6c65c45d-a2dc-432b-b87d-a51d0e1b8cf6\",\n                \"email\": \"ewa.wilk@example.com\",\n                \"first_name\": \"Olga\",\n                \"last_name\": \"Brzezi\u0144ska\",\n                \"phone_number\": \"0048(53)0710616\",\n                \"created_at\": \"2022-05-04T19:17:33.000000Z\",\n                \"updated_at\": \"2022-05-04T19:17:33.000000Z\",\n                \"deleted_at\": null,\n                \"company_id\": \"529cb14d-70e6-40d9-a32e-478a1cc80fce\"\n            },\n            {\n                \"id\": \"308446b3-e779-4ad8-b33f-adfc39ad84ee\",\n                \"email\": \"lwojciechowski@example.net\",\n                \"first_name\": \"Nela\",\n                \"last_name\": \"Makowski\",\n                \"phone_number\": \"0048 351 031 670\",\n                \"created_at\": \"2022-05-04T19:17:33.000000Z\",\n                \"updated_at\": \"2022-05-04T19:17:33.000000Z\",\n                \"deleted_at\": null,\n                \"company_id\": \"529cb14d-70e6-40d9-a32e-478a1cc80fce\"\n            },\n            {\n                \"id\": \"2c474175-83bd-4c98-ba2b-c15164e19c86\",\n                \"email\": \"fkowalczyk@example.org\",\n                \"first_name\": \"Ksawery\",\n                \"last_name\": \"Zaj\u0105c\",\n                \"phone_number\": \"+48 96 886 15 40\",\n                \"created_at\": \"2022-05-04T19:17:33.000000Z\",\n                \"updated_at\": \"2022-05-04T19:17:33.000000Z\",\n                \"deleted_at\": null,\n                \"company_id\": \"529cb14d-70e6-40d9-a32e-478a1cc80fce\"\n            },\n            {\n                \"id\": \"77f09e5a-7639-4db8-be08-b812c4ee0191\",\n                \"email\": \"aleksander75@example.net\",\n                \"first_name\": \"Julia\",\n                \"last_name\": \"G\u00f3rska\",\n                \"phone_number\": \"763 668 997\",\n                \"created_at\": \"2022-05-04T19:17:33.000000Z\",\n                \"updated_at\": \"2022-05-04T19:17:33.000000Z\",\n                \"deleted_at\": null,\n                \"company_id\": \"529cb14d-70e6-40d9-a32e-478a1cc80fce\"\n            },\n            {\n                \"id\": \"349065bd-72a5-49c9-8f92-a41156c82be1\",\n                \"email\": \"oliwia.wilk@example.com\",\n                \"first_name\": \"Oliwier\",\n                \"last_name\": \"Ko\u0142odziej\",\n                \"phone_number\": \"0048 26 502 48 89\",\n                \"created_at\": \"2022-05-04T19:17:33.000000Z\",\n                \"updated_at\": \"2022-05-04T19:17:33.000000Z\",\n                \"deleted_at\": null,\n                \"company_id\": \"529cb14d-70e6-40d9-a32e-478a1cc80fce\"\n            }\n        ]\n    }\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Get a Company",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/companies\/:company",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/companies\/:company",
+                            "variable": [
+                                {
+                                    "id": "company",
+                                    "key": "company",
+                                    "value": "529cb14d-70e6-40d9-a32e-478a1cc80fce",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n    \"data\": {\n        \"id\": \"529cb14d-70e6-40d9-a32e-478a1cc80fce\",\n        \"name\": \"Borkowski sp. k.\",\n        \"nip\": \"9814308576\",\n        \"address\": \"Legion\u00f3w 90\/66, 71-143 Zielona G\u00f3ra\",\n        \"city\": \"Rumia\",\n        \"postcode\": \"06-761\",\n        \"created_at\": \"2022-05-04T19:17:33.000000Z\",\n        \"updated_at\": \"2022-05-04T19:17:33.000000Z\",\n        \"deleted_at\": null,\n        \"employees\": [\n            {\n                \"id\": \"6c65c45d-a2dc-432b-b87d-a51d0e1b8cf6\",\n                \"email\": \"ewa.wilk@example.com\",\n                \"first_name\": \"Olga\",\n                \"last_name\": \"Brzezi\u0144ska\",\n                \"phone_number\": \"0048(53)0710616\",\n                \"created_at\": \"2022-05-04T19:17:33.000000Z\",\n                \"updated_at\": \"2022-05-04T19:17:33.000000Z\",\n                \"deleted_at\": null,\n                \"company_id\": \"529cb14d-70e6-40d9-a32e-478a1cc80fce\"\n            },\n            {\n                \"id\": \"308446b3-e779-4ad8-b33f-adfc39ad84ee\",\n                \"email\": \"lwojciechowski@example.net\",\n                \"first_name\": \"Nela\",\n                \"last_name\": \"Makowski\",\n                \"phone_number\": \"0048 351 031 670\",\n                \"created_at\": \"2022-05-04T19:17:33.000000Z\",\n                \"updated_at\": \"2022-05-04T19:17:33.000000Z\",\n                \"deleted_at\": null,\n                \"company_id\": \"529cb14d-70e6-40d9-a32e-478a1cc80fce\"\n            },\n            {\n                \"id\": \"2c474175-83bd-4c98-ba2b-c15164e19c86\",\n                \"email\": \"fkowalczyk@example.org\",\n                \"first_name\": \"Ksawery\",\n                \"last_name\": \"Zaj\u0105c\",\n                \"phone_number\": \"+48 96 886 15 40\",\n                \"created_at\": \"2022-05-04T19:17:33.000000Z\",\n                \"updated_at\": \"2022-05-04T19:17:33.000000Z\",\n                \"deleted_at\": null,\n                \"company_id\": \"529cb14d-70e6-40d9-a32e-478a1cc80fce\"\n            },\n            {\n                \"id\": \"77f09e5a-7639-4db8-be08-b812c4ee0191\",\n                \"email\": \"aleksander75@example.net\",\n                \"first_name\": \"Julia\",\n                \"last_name\": \"G\u00f3rska\",\n                \"phone_number\": \"763 668 997\",\n                \"created_at\": \"2022-05-04T19:17:33.000000Z\",\n                \"updated_at\": \"2022-05-04T19:17:33.000000Z\",\n                \"deleted_at\": null,\n                \"company_id\": \"529cb14d-70e6-40d9-a32e-478a1cc80fce\"\n            },\n            {\n                \"id\": \"349065bd-72a5-49c9-8f92-a41156c82be1\",\n                \"email\": \"oliwia.wilk@example.com\",\n                \"first_name\": \"Oliwier\",\n                \"last_name\": \"Ko\u0142odziej\",\n                \"phone_number\": \"0048 26 502 48 89\",\n                \"created_at\": \"2022-05-04T19:17:33.000000Z\",\n                \"updated_at\": \"2022-05-04T19:17:33.000000Z\",\n                \"deleted_at\": null,\n                \"company_id\": \"529cb14d-70e6-40d9-a32e-478a1cc80fce\"\n            }\n        ]\n    }\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Update a Company",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/companies\/:company",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/companies\/:company",
+                            "variable": [
+                                {
+                                    "id": "company",
+                                    "key": "company",
+                                    "value": "529cb14d-70e6-40d9-a32e-478a1cc80fce",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "PATCH",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"name\":\"Firma S.A.\",\"nip\":\"7972226391\",\"address\":\"Go\u0142\u0119bia 94, 32-058 Opole\",\"city\":\"Opole\",\"postcode\":\"32-058\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n    \"data\": {\n        \"id\": \"529cb14d-70e6-40d9-a32e-478a1cc80fce\",\n        \"name\": \"Borkowski sp. k.\",\n        \"nip\": \"9814308576\",\n        \"address\": \"Legion\u00f3w 90\/66, 71-143 Zielona G\u00f3ra\",\n        \"city\": \"Rumia\",\n        \"postcode\": \"06-761\",\n        \"created_at\": \"2022-05-04T19:17:33.000000Z\",\n        \"updated_at\": \"2022-05-04T19:17:33.000000Z\",\n        \"deleted_at\": null,\n        \"employees\": [\n            {\n                \"id\": \"6c65c45d-a2dc-432b-b87d-a51d0e1b8cf6\",\n                \"email\": \"ewa.wilk@example.com\",\n                \"first_name\": \"Olga\",\n                \"last_name\": \"Brzezi\u0144ska\",\n                \"phone_number\": \"0048(53)0710616\",\n                \"created_at\": \"2022-05-04T19:17:33.000000Z\",\n                \"updated_at\": \"2022-05-04T19:17:33.000000Z\",\n                \"deleted_at\": null,\n                \"company_id\": \"529cb14d-70e6-40d9-a32e-478a1cc80fce\"\n            },\n            {\n                \"id\": \"308446b3-e779-4ad8-b33f-adfc39ad84ee\",\n                \"email\": \"lwojciechowski@example.net\",\n                \"first_name\": \"Nela\",\n                \"last_name\": \"Makowski\",\n                \"phone_number\": \"0048 351 031 670\",\n                \"created_at\": \"2022-05-04T19:17:33.000000Z\",\n                \"updated_at\": \"2022-05-04T19:17:33.000000Z\",\n                \"deleted_at\": null,\n                \"company_id\": \"529cb14d-70e6-40d9-a32e-478a1cc80fce\"\n            },\n            {\n                \"id\": \"2c474175-83bd-4c98-ba2b-c15164e19c86\",\n                \"email\": \"fkowalczyk@example.org\",\n                \"first_name\": \"Ksawery\",\n                \"last_name\": \"Zaj\u0105c\",\n                \"phone_number\": \"+48 96 886 15 40\",\n                \"created_at\": \"2022-05-04T19:17:33.000000Z\",\n                \"updated_at\": \"2022-05-04T19:17:33.000000Z\",\n                \"deleted_at\": null,\n                \"company_id\": \"529cb14d-70e6-40d9-a32e-478a1cc80fce\"\n            },\n            {\n                \"id\": \"77f09e5a-7639-4db8-be08-b812c4ee0191\",\n                \"email\": \"aleksander75@example.net\",\n                \"first_name\": \"Julia\",\n                \"last_name\": \"G\u00f3rska\",\n                \"phone_number\": \"763 668 997\",\n                \"created_at\": \"2022-05-04T19:17:33.000000Z\",\n                \"updated_at\": \"2022-05-04T19:17:33.000000Z\",\n                \"deleted_at\": null,\n                \"company_id\": \"529cb14d-70e6-40d9-a32e-478a1cc80fce\"\n            },\n            {\n                \"id\": \"349065bd-72a5-49c9-8f92-a41156c82be1\",\n                \"email\": \"oliwia.wilk@example.com\",\n                \"first_name\": \"Oliwier\",\n                \"last_name\": \"Ko\u0142odziej\",\n                \"phone_number\": \"0048 26 502 48 89\",\n                \"created_at\": \"2022-05-04T19:17:33.000000Z\",\n                \"updated_at\": \"2022-05-04T19:17:33.000000Z\",\n                \"deleted_at\": null,\n                \"company_id\": \"529cb14d-70e6-40d9-a32e-478a1cc80fce\"\n            }\n        ]\n    }\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Get all Companies",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/companies",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/companies"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n    \"data\": [\n        {\n            \"id\": \"529cb14d-70e6-40d9-a32e-478a1cc80fce\",\n            \"name\": \"Borkowski sp. k.\",\n            \"nip\": \"9814308576\",\n            \"address\": \"Legion\u00f3w 90\/66, 71-143 Zielona G\u00f3ra\",\n            \"city\": \"Rumia\",\n            \"postcode\": \"06-761\",\n            \"created_at\": \"2022-05-04T19:17:33.000000Z\",\n            \"updated_at\": \"2022-05-04T19:17:33.000000Z\",\n            \"deleted_at\": null,\n            \"employees\": [\n                {\n                    \"id\": \"6c65c45d-a2dc-432b-b87d-a51d0e1b8cf6\",\n                    \"email\": \"ewa.wilk@example.com\",\n                    \"first_name\": \"Olga\",\n                    \"last_name\": \"Brzezi\u0144ska\",\n                    \"phone_number\": \"0048(53)0710616\",\n                    \"created_at\": \"2022-05-04T19:17:33.000000Z\",\n                    \"updated_at\": \"2022-05-04T19:17:33.000000Z\",\n                    \"deleted_at\": null,\n                    \"company_id\": \"529cb14d-70e6-40d9-a32e-478a1cc80fce\"\n                },\n                {\n                    \"id\": \"308446b3-e779-4ad8-b33f-adfc39ad84ee\",\n                    \"email\": \"lwojciechowski@example.net\",\n                    \"first_name\": \"Nela\",\n                    \"last_name\": \"Makowski\",\n                    \"phone_number\": \"0048 351 031 670\",\n                    \"created_at\": \"2022-05-04T19:17:33.000000Z\",\n                    \"updated_at\": \"2022-05-04T19:17:33.000000Z\",\n                    \"deleted_at\": null,\n                    \"company_id\": \"529cb14d-70e6-40d9-a32e-478a1cc80fce\"\n                },\n                {\n                    \"id\": \"2c474175-83bd-4c98-ba2b-c15164e19c86\",\n                    \"email\": \"fkowalczyk@example.org\",\n                    \"first_name\": \"Ksawery\",\n                    \"last_name\": \"Zaj\u0105c\",\n                    \"phone_number\": \"+48 96 886 15 40\",\n                    \"created_at\": \"2022-05-04T19:17:33.000000Z\",\n                    \"updated_at\": \"2022-05-04T19:17:33.000000Z\",\n                    \"deleted_at\": null,\n                    \"company_id\": \"529cb14d-70e6-40d9-a32e-478a1cc80fce\"\n                },\n                {\n                    \"id\": \"77f09e5a-7639-4db8-be08-b812c4ee0191\",\n                    \"email\": \"aleksander75@example.net\",\n                    \"first_name\": \"Julia\",\n                    \"last_name\": \"G\u00f3rska\",\n                    \"phone_number\": \"763 668 997\",\n                    \"created_at\": \"2022-05-04T19:17:33.000000Z\",\n                    \"updated_at\": \"2022-05-04T19:17:33.000000Z\",\n                    \"deleted_at\": null,\n                    \"company_id\": \"529cb14d-70e6-40d9-a32e-478a1cc80fce\"\n                },\n                {\n                    \"id\": \"349065bd-72a5-49c9-8f92-a41156c82be1\",\n                    \"email\": \"oliwia.wilk@example.com\",\n                    \"first_name\": \"Oliwier\",\n                    \"last_name\": \"Ko\u0142odziej\",\n                    \"phone_number\": \"0048 26 502 48 89\",\n                    \"created_at\": \"2022-05-04T19:17:33.000000Z\",\n                    \"updated_at\": \"2022-05-04T19:17:33.000000Z\",\n                    \"deleted_at\": null,\n                    \"company_id\": \"529cb14d-70e6-40d9-a32e-478a1cc80fce\"\n                },\n                {\n                    \"id\": \"e31ecb36-acb2-4456-bb58-c19906966498\",\n                    \"email\": \"jan.kowalski@example.com\",\n                    \"first_name\": \"Jan\",\n                    \"last_name\": \"Kowalski\",\n                    \"phone_number\": \"+48791000000\",\n                    \"created_at\": \"2022-05-04T19:19:15.000000Z\",\n                    \"updated_at\": \"2022-05-04T19:19:15.000000Z\",\n                    \"deleted_at\": null,\n                    \"company_id\": \"529cb14d-70e6-40d9-a32e-478a1cc80fce\"\n                }\n            ]\n        },\n        {\n            \"id\": \"6a3d5db9-1180-4795-a246-0ad29405e747\",\n            \"name\": \"Szczepa\u0144ski sp. j.\",\n            \"nip\": \"1984834526\",\n            \"address\": \"\u015aciegiennego Piotra 98\/93, 57-943 Boles\u0142awiec\",\n            \"city\": \"Jaworzno\",\n            \"postcode\": \"69-884\",\n            \"created_at\": \"2022-05-04T19:17:33.000000Z\",\n            \"updated_at\": \"2022-05-04T19:17:33.000000Z\",\n            \"deleted_at\": null,\n            \"employees\": [\n                {\n                    \"id\": \"815433f4-3784-4c6d-9cbd-ec1ec1417547\",\n                    \"email\": \"sadowski.gustaw@example.net\",\n                    \"first_name\": \"Stanis\u0142aw\",\n                    \"last_name\": \"Adamska\",\n                    \"phone_number\": \"+48 56 192 25 28\",\n                    \"created_at\": \"2022-05-04T19:17:33.000000Z\",\n                    \"updated_at\": \"2022-05-04T19:17:33.000000Z\",\n                    \"deleted_at\": null,\n                    \"company_id\": \"6a3d5db9-1180-4795-a246-0ad29405e747\"\n                },\n                {\n                    \"id\": \"60a46644-aee0-402b-acc8-d082743bdfe2\",\n                    \"email\": \"zalewska.katarzyna@example.com\",\n                    \"first_name\": \"Patryk\",\n                    \"last_name\": \"Kami\u0144ski\",\n                    \"phone_number\": \"0048 011 659 073\",\n                    \"created_at\": \"2022-05-04T19:17:33.000000Z\",\n                    \"updated_at\": \"2022-05-04T19:17:33.000000Z\",\n                    \"deleted_at\": null,\n                    \"company_id\": \"6a3d5db9-1180-4795-a246-0ad29405e747\"\n                },\n                {\n                    \"id\": \"aacddc0a-e914-49a1-9e69-ec9ab88df123\",\n                    \"email\": \"nadia.piotrowska@example.org\",\n                    \"first_name\": \"B\u0142a\u017cej\",\n                    \"last_name\": \"Laskowski\",\n                    \"phone_number\": \"256418804\",\n                    \"created_at\": \"2022-05-04T19:17:33.000000Z\",\n                    \"updated_at\": \"2022-05-04T19:17:33.000000Z\",\n                    \"deleted_at\": null,\n                    \"company_id\": \"6a3d5db9-1180-4795-a246-0ad29405e747\"\n                },\n                {\n                    \"id\": \"25a9f404-301e-40bc-a581-84621e1ade26\",\n                    \"email\": \"wilk.kamil@example.org\",\n                    \"first_name\": \"Pola\",\n                    \"last_name\": \"Pawlak\",\n                    \"phone_number\": \"0048(52)5873641\",\n                    \"created_at\": \"2022-05-04T19:17:33.000000Z\",\n                    \"updated_at\": \"2022-05-04T19:17:33.000000Z\",\n                    \"deleted_at\": null,\n                    \"company_id\": \"6a3d5db9-1180-4795-a246-0ad29405e747\"\n                },\n                {\n                    \"id\": \"f91a1995-f6eb-42bf-a167-e9ef176209d6\",\n                    \"email\": \"rkowalczyk@example.net\",\n                    \"first_name\": \"Dominika\",\n                    \"last_name\": \"Brzezi\u0144ska\",\n                    \"phone_number\": \"0048(83)9519872\",\n                    \"created_at\": \"2022-05-04T19:17:33.000000Z\",\n                    \"updated_at\": \"2022-05-04T19:17:33.000000Z\",\n                    \"deleted_at\": null,\n                    \"company_id\": \"6a3d5db9-1180-4795-a246-0ad29405e747\"\n                }\n            ]\n        },\n        {\n            \"id\": \"1bfedd4c-e86e-42c1-8e06-58d30651ac14\",\n            \"name\": \"B\u0105k\",\n            \"nip\": \"4575081284\",\n            \"address\": \"\u017burawia 87\/91, 21-999 Starachowice\",\n            \"city\": \"Police\",\n            \"postcode\": \"31-697\",\n            \"created_at\": \"2022-05-04T19:17:33.000000Z\",\n            \"updated_at\": \"2022-05-04T19:17:33.000000Z\",\n            \"deleted_at\": null,\n            \"employees\": [\n                {\n                    \"id\": \"b0592150-bf06-45b9-ad1b-7686b1ab7774\",\n                    \"email\": \"dominika.wisniewska@example.org\",\n                    \"first_name\": \"Jacek\",\n                    \"last_name\": \"B\u0142aszczyk\",\n                    \"phone_number\": \"767373957\",\n                    \"created_at\": \"2022-05-04T19:17:33.000000Z\",\n                    \"updated_at\": \"2022-05-04T19:17:33.000000Z\",\n                    \"deleted_at\": null,\n                    \"company_id\": \"1bfedd4c-e86e-42c1-8e06-58d30651ac14\"\n                },\n                {\n                    \"id\": \"ae9069e0-fbe2-446c-971e-523a3c47ecb8\",\n                    \"email\": \"maria57@example.net\",\n                    \"first_name\": \"Nataniel\",\n                    \"last_name\": \"Baranowska\",\n                    \"phone_number\": \"0048 381 309 300\",\n                    \"created_at\": \"2022-05-04T19:17:33.000000Z\",\n                    \"updated_at\": \"2022-05-04T19:17:33.000000Z\",\n                    \"deleted_at\": null,\n                    \"company_id\": \"1bfedd4c-e86e-42c1-8e06-58d30651ac14\"\n                },\n                {\n                    \"id\": \"f6c83f1e-ecd3-47e9-aa75-dd4788846c91\",\n                    \"email\": \"fstepien@example.org\",\n                    \"first_name\": \"Damian\",\n                    \"last_name\": \"Michalski\",\n                    \"phone_number\": \"0048 01 680 52 02\",\n                    \"created_at\": \"2022-05-04T19:17:33.000000Z\",\n                    \"updated_at\": \"2022-05-04T19:17:33.000000Z\",\n                    \"deleted_at\": null,\n                    \"company_id\": \"1bfedd4c-e86e-42c1-8e06-58d30651ac14\"\n                },\n                {\n                    \"id\": \"a204125b-b0e8-4752-90f2-19267b327963\",\n                    \"email\": \"pawlak.jeremi@example.com\",\n                    \"first_name\": \"Klara\",\n                    \"last_name\": \"Kalinowska\",\n                    \"phone_number\": \"0048 06 027 83 77\",\n                    \"created_at\": \"2022-05-04T19:17:33.000000Z\",\n                    \"updated_at\": \"2022-05-04T19:17:33.000000Z\",\n                    \"deleted_at\": null,\n                    \"company_id\": \"1bfedd4c-e86e-42c1-8e06-58d30651ac14\"\n                },\n                {\n                    \"id\": \"59f927c9-5c68-4462-b333-fd1bbbe5034e\",\n                    \"email\": \"jaworski.laura@example.net\",\n                    \"first_name\": \"Dagmara\",\n                    \"last_name\": \"Kr\u00f3l\",\n                    \"phone_number\": \"+48 61 207 41 44\",\n                    \"created_at\": \"2022-05-04T19:17:33.000000Z\",\n                    \"updated_at\": \"2022-05-04T19:17:33.000000Z\",\n                    \"deleted_at\": null,\n                    \"company_id\": \"1bfedd4c-e86e-42c1-8e06-58d30651ac14\"\n                }\n            ]\n        }\n    ]\n}",
+                            "name": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Employee",
+            "description": "",
+            "item": [
+                {
+                    "name": "Create an Employee",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/employees",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/employees"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"first_name\":\"Jan\",\"last_name\":\"Kowalski\",\"email\":\"jan.kowalski@example.com\",\"phone_number\":\"+48791000000\",\"company_id\":\"7b081c01-b5b4-4480-bf86-30e59bbed6a0\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n    \"data\": {\n        \"id\": \"6c65c45d-a2dc-432b-b87d-a51d0e1b8cf6\",\n        \"email\": \"ewa.wilk@example.com\",\n        \"first_name\": \"Olga\",\n        \"last_name\": \"Brzezi\u0144ska\",\n        \"phone_number\": \"0048(53)0710616\",\n        \"created_at\": \"2022-05-04T19:17:33.000000Z\",\n        \"updated_at\": \"2022-05-04T19:17:33.000000Z\",\n        \"deleted_at\": null,\n        \"company_id\": \"529cb14d-70e6-40d9-a32e-478a1cc80fce\",\n        \"company\": {\n            \"id\": \"529cb14d-70e6-40d9-a32e-478a1cc80fce\",\n            \"name\": \"Borkowski sp. k.\",\n            \"nip\": \"9814308576\",\n            \"address\": \"Legion\u00f3w 90\/66, 71-143 Zielona G\u00f3ra\",\n            \"city\": \"Rumia\",\n            \"postcode\": \"06-761\",\n            \"created_at\": \"2022-05-04T19:17:33.000000Z\",\n            \"updated_at\": \"2022-05-04T19:17:33.000000Z\",\n            \"deleted_at\": null\n        }\n    }\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Get an Employee",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/employees\/:employee",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/employees\/:employee",
+                            "variable": [
+                                {
+                                    "id": "employee",
+                                    "key": "employee",
+                                    "value": "6c65c45d-a2dc-432b-b87d-a51d0e1b8cf6",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n    \"data\": {\n        \"id\": \"6c65c45d-a2dc-432b-b87d-a51d0e1b8cf6\",\n        \"email\": \"ewa.wilk@example.com\",\n        \"first_name\": \"Olga\",\n        \"last_name\": \"Brzezi\u0144ska\",\n        \"phone_number\": \"0048(53)0710616\",\n        \"created_at\": \"2022-05-04T19:17:33.000000Z\",\n        \"updated_at\": \"2022-05-04T19:17:33.000000Z\",\n        \"deleted_at\": null,\n        \"company_id\": \"529cb14d-70e6-40d9-a32e-478a1cc80fce\",\n        \"company\": {\n            \"id\": \"529cb14d-70e6-40d9-a32e-478a1cc80fce\",\n            \"name\": \"Borkowski sp. k.\",\n            \"nip\": \"9814308576\",\n            \"address\": \"Legion\u00f3w 90\/66, 71-143 Zielona G\u00f3ra\",\n            \"city\": \"Rumia\",\n            \"postcode\": \"06-761\",\n            \"created_at\": \"2022-05-04T19:17:33.000000Z\",\n            \"updated_at\": \"2022-05-04T19:17:33.000000Z\",\n            \"deleted_at\": null\n        }\n    }\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Create an Employee",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/employees\/:employee",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/employees\/:employee",
+                            "variable": [
+                                {
+                                    "id": "employee",
+                                    "key": "employee",
+                                    "value": "6c65c45d-a2dc-432b-b87d-a51d0e1b8cf6",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "PATCH",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"email\":\"jan.kowalski@example.com\",\"first_name\":\"Jan\",\"last_name\":\"Kowalski\",\"phone_number\":\"+48791000000\",\"company_id\":\"7b081c01-b5b4-4480-bf86-30e59bbed6a0\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n    \"data\": {\n        \"id\": \"6c65c45d-a2dc-432b-b87d-a51d0e1b8cf6\",\n        \"email\": \"ewa.wilk@example.com\",\n        \"first_name\": \"Olga\",\n        \"last_name\": \"Brzezi\u0144ska\",\n        \"phone_number\": \"0048(53)0710616\",\n        \"created_at\": \"2022-05-04T19:17:33.000000Z\",\n        \"updated_at\": \"2022-05-04T19:17:33.000000Z\",\n        \"deleted_at\": null,\n        \"company_id\": \"529cb14d-70e6-40d9-a32e-478a1cc80fce\",\n        \"company\": {\n            \"id\": \"529cb14d-70e6-40d9-a32e-478a1cc80fce\",\n            \"name\": \"Borkowski sp. k.\",\n            \"nip\": \"9814308576\",\n            \"address\": \"Legion\u00f3w 90\/66, 71-143 Zielona G\u00f3ra\",\n            \"city\": \"Rumia\",\n            \"postcode\": \"06-761\",\n            \"created_at\": \"2022-05-04T19:17:33.000000Z\",\n            \"updated_at\": \"2022-05-04T19:17:33.000000Z\",\n            \"deleted_at\": null\n        }\n    }\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Delete an Employee",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/employees\/:employee",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/employees\/:employee",
+                            "variable": [
+                                {
+                                    "id": "employee",
+                                    "key": "employee",
+                                    "value": "6c65c45d-a2dc-432b-b87d-a51d0e1b8cf6",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get all Employees",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/employees",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/employees"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n    \"data\": [\n        {\n            \"id\": \"6c65c45d-a2dc-432b-b87d-a51d0e1b8cf6\",\n            \"email\": \"ewa.wilk@example.com\",\n            \"first_name\": \"Olga\",\n            \"last_name\": \"Brzezi\u0144ska\",\n            \"phone_number\": \"0048(53)0710616\",\n            \"created_at\": \"2022-05-04T19:17:33.000000Z\",\n            \"updated_at\": \"2022-05-04T19:17:33.000000Z\",\n            \"deleted_at\": null,\n            \"company_id\": \"529cb14d-70e6-40d9-a32e-478a1cc80fce\",\n            \"company\": {\n                \"id\": \"529cb14d-70e6-40d9-a32e-478a1cc80fce\",\n                \"name\": \"Borkowski sp. k.\",\n                \"nip\": \"9814308576\",\n                \"address\": \"Legion\u00f3w 90\/66, 71-143 Zielona G\u00f3ra\",\n                \"city\": \"Rumia\",\n                \"postcode\": \"06-761\",\n                \"created_at\": \"2022-05-04T19:17:33.000000Z\",\n                \"updated_at\": \"2022-05-04T19:17:33.000000Z\",\n                \"deleted_at\": null\n            }\n        },\n        {\n            \"id\": \"308446b3-e779-4ad8-b33f-adfc39ad84ee\",\n            \"email\": \"lwojciechowski@example.net\",\n            \"first_name\": \"Nela\",\n            \"last_name\": \"Makowski\",\n            \"phone_number\": \"0048 351 031 670\",\n            \"created_at\": \"2022-05-04T19:17:33.000000Z\",\n            \"updated_at\": \"2022-05-04T19:17:33.000000Z\",\n            \"deleted_at\": null,\n            \"company_id\": \"529cb14d-70e6-40d9-a32e-478a1cc80fce\",\n            \"company\": {\n                \"id\": \"529cb14d-70e6-40d9-a32e-478a1cc80fce\",\n                \"name\": \"Borkowski sp. k.\",\n                \"nip\": \"9814308576\",\n                \"address\": \"Legion\u00f3w 90\/66, 71-143 Zielona G\u00f3ra\",\n                \"city\": \"Rumia\",\n                \"postcode\": \"06-761\",\n                \"created_at\": \"2022-05-04T19:17:33.000000Z\",\n                \"updated_at\": \"2022-05-04T19:17:33.000000Z\",\n                \"deleted_at\": null\n            }\n        },\n        {\n            \"id\": \"2c474175-83bd-4c98-ba2b-c15164e19c86\",\n            \"email\": \"fkowalczyk@example.org\",\n            \"first_name\": \"Ksawery\",\n            \"last_name\": \"Zaj\u0105c\",\n            \"phone_number\": \"+48 96 886 15 40\",\n            \"created_at\": \"2022-05-04T19:17:33.000000Z\",\n            \"updated_at\": \"2022-05-04T19:17:33.000000Z\",\n            \"deleted_at\": null,\n            \"company_id\": \"529cb14d-70e6-40d9-a32e-478a1cc80fce\",\n            \"company\": {\n                \"id\": \"529cb14d-70e6-40d9-a32e-478a1cc80fce\",\n                \"name\": \"Borkowski sp. k.\",\n                \"nip\": \"9814308576\",\n                \"address\": \"Legion\u00f3w 90\/66, 71-143 Zielona G\u00f3ra\",\n                \"city\": \"Rumia\",\n                \"postcode\": \"06-761\",\n                \"created_at\": \"2022-05-04T19:17:33.000000Z\",\n                \"updated_at\": \"2022-05-04T19:17:33.000000Z\",\n                \"deleted_at\": null\n            }\n        }\n    ]\n}",
+                            "name": ""
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "auth": {
+        "type": "noauth"
+    }
+}

@@ -1,0 +1,70 @@
+{
+    "data": {
+        "id": "529cb14d-70e6-40d9-a32e-478a1cc80fce",
+        "name": "Borkowski sp. k.",
+        "nip": "9814308576",
+        "address": "Legionów 90/66, 71-143 Zielona Góra",
+        "city": "Rumia",
+        "postcode": "06-761",
+        "created_at": "2022-05-04T19:17:33.000000Z",
+        "updated_at": "2022-05-04T19:17:33.000000Z",
+        "deleted_at": null,
+        "employees": [
+            {
+                "id": "6c65c45d-a2dc-432b-b87d-a51d0e1b8cf6",
+                "email": "ewa.wilk@example.com",
+                "first_name": "Olga",
+                "last_name": "Brzezińska",
+                "phone_number": "0048(53)0710616",
+                "created_at": "2022-05-04T19:17:33.000000Z",
+                "updated_at": "2022-05-04T19:17:33.000000Z",
+                "deleted_at": null,
+                "company_id": "529cb14d-70e6-40d9-a32e-478a1cc80fce"
+            },
+            {
+                "id": "308446b3-e779-4ad8-b33f-adfc39ad84ee",
+                "email": "lwojciechowski@example.net",
+                "first_name": "Nela",
+                "last_name": "Makowski",
+                "phone_number": "0048 351 031 670",
+                "created_at": "2022-05-04T19:17:33.000000Z",
+                "updated_at": "2022-05-04T19:17:33.000000Z",
+                "deleted_at": null,
+                "company_id": "529cb14d-70e6-40d9-a32e-478a1cc80fce"
+            },
+            {
+                "id": "2c474175-83bd-4c98-ba2b-c15164e19c86",
+                "email": "fkowalczyk@example.org",
+                "first_name": "Ksawery",
+                "last_name": "Zając",
+                "phone_number": "+48 96 886 15 40",
+                "created_at": "2022-05-04T19:17:33.000000Z",
+                "updated_at": "2022-05-04T19:17:33.000000Z",
+                "deleted_at": null,
+                "company_id": "529cb14d-70e6-40d9-a32e-478a1cc80fce"
+            },
+            {
+                "id": "77f09e5a-7639-4db8-be08-b812c4ee0191",
+                "email": "aleksander75@example.net",
+                "first_name": "Julia",
+                "last_name": "Górska",
+                "phone_number": "763 668 997",
+                "created_at": "2022-05-04T19:17:33.000000Z",
+                "updated_at": "2022-05-04T19:17:33.000000Z",
+                "deleted_at": null,
+                "company_id": "529cb14d-70e6-40d9-a32e-478a1cc80fce"
+            },
+            {
+                "id": "349065bd-72a5-49c9-8f92-a41156c82be1",
+                "email": "oliwia.wilk@example.com",
+                "first_name": "Oliwier",
+                "last_name": "Kołodziej",
+                "phone_number": "0048 26 502 48 89",
+                "created_at": "2022-05-04T19:17:33.000000Z",
+                "updated_at": "2022-05-04T19:17:33.000000Z",
+                "deleted_at": null,
+                "company_id": "529cb14d-70e6-40d9-a32e-478a1cc80fce"
+            }
+        ]
+    }
+}
